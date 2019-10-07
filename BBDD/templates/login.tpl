@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Practica web2</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="icon" type="image/jpg" media="screen" href="images/icono.jpg">
-
-
-    
-</head>
-<body>
+{include file="header.tpl"}
         <div class="container-fluids all">
          <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button" style="height:80px;background-color:#37434d;color:#ffffff;">
                 <div class="container-fluid"><a class="navbar-brand" href="#"><i class="fa fa-globe"></i> MayoristaExpress</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -26,49 +12,25 @@
                                 </ul>
                         </div>
                  </div>
-        </nav>
-        
-        <div class="row primerRow">
-                        <div class="col-4"> 
+        </nav>   
+         <div class="row primerRow">
+            <div class="col-4"> 
                                 </div>
-                        <div class="col-4 formmenor"> 
-                                 <form action="index.php" method="POST">
-                                                 <div class="form-group">
-                                                           <label for="usuario">Usuario:</label>
-                                                            <input type="text" class="form-control input-usuario" id="usuario">
-                                                   </div>
-                                                   <div class="form-group">
-                                                                <label for="password">Password:</label>
-                                                                <input type="password" class="form-control input-password" id="password">
-                                                        </div>
-                                   <div><button type="submit" class="btn btn-danger colorbotonsubmit formpost">Submit</button></div>
-        
-                        </div>
-                        <div class="col-4"> 
-                         </div>
-         </div>
-         
-         <div class="row segundoRow">
-                <div class="col-4"> 
-                        </div>
-                <div class="col-4 formmenor"> 
-                         <form action="index.php" method="POST">
-                                         <div class="form-group">
-                                                   <label for="usuario">Usuario:</label>
-                                                    <input type="text" class="form-control input-usuario" id="usuario">
-                                           </div>
-                                           <div class="form-group">
-                                                        <label for="password">Password:</label>
-                                                        <input type="password" class="form-control input-password" id="password">
-                                                </div>
-                           <div><button type="submit" class="btn btn-danger colorbotonsubmit formpost">Submit</button></div>
-
-                </div>
-                <div class="col-4"> 
-                 </div>
+                                <div class="col-4 formmenor">
+        <form action="iniciarSesion" method="post">
+            <input class="form-control" type="text" name="user" placeholder="Usuario">
+            <input class="form-control" type="password" name="pass" placeholder="Password">
+            <input class="btn btn-primary colorbotonsubmit formpost" type="submit" value="Login">
+        </form>
         </div>
-                
-        
+         <div class="col-4"> 
+            </div>
+      </div> 
+
+
+// de aca para abajo falta hacer que ande y pasarlo a otro template que sea para modificar la tabla si es administrador sino solo verla.
+// tambien hacer el registro en otra aparte
+
         <div class="row">
                 <div class="col-4"> 
                         </div>
@@ -167,5 +129,5 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="js/bootstrap.min.js"></script>
-</body>
+    </body>
 </html>
