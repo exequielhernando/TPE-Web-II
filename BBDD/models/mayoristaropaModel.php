@@ -10,6 +10,14 @@ class mayoristaropaModel {
         $mayoristaropa = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $mayoristaropa;
     }	
+    public function Getmayoristropa($id){
+        $sentencia = $this->db->prepare( "select * from producto where id = ?");
+        $sentencia->execute([$id]);
+        $mayoristaropa = $sentencia->fetch(PDO::FETCH_OBJ);
+        
+        return $mayoristaropa;
+    }
+
     public function Insertarmayoristaropa($id_categoria,$descripcion,$precio,$stock,$imagenes){
         $sentencia = $this->db->prepare("INSERT INTO producto(id_categoria,descripcion,precio,stock,imagenes) VALUES(?,?,?,?,?)");
         $sentencia->execute(array($id_categoria,$descripcion,$precio,$stock,$imagenes));
