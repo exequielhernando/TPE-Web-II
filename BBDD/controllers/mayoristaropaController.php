@@ -33,7 +33,6 @@ class mayoristaropaController {
         $mayoristaropa = $this->model->Getmayoristaropa();
         $this->view->Displaymayoristaropa($mayoristaropa);
     }
-
     public function Insertarmayoristaropa(){
         $this->checkLogIn();
         $finalout = 0;
@@ -43,19 +42,35 @@ class mayoristaropaController {
         $this->model->Insertarmayoristaropa($_POST['id_categoria'],$_POST['descripcion'],$_POST['precio'],$_POST['stock'],$_POST['imagenes'],$finalout );
         header("Location: " . BASE_URL);
     }
-
-    public function Finalizarmayoristaropa($id){
+    public function SetId_categoria($id){
         $this->checkLogIn();
-        $this->model->Finalizarmayoristaropa($id);
+        $this->model->SetId_categoria($id);
         header("Location: " . BASE_URL);
     }
-
-    public function Borrarmayoristaropa($id){
+    public function SetDescripcionmayoristaropa($id){
         $this->checkLogIn();
-        $this->model->Borrarmayoristaropa($id);
+        $this->model->SetDescripcionmayoristaropa($id);
+        header("Location: " . BASE_URL);
+    }
+    public function SetPreciomayoristaropa($id){
+        $this->checkLogIn();
+        $this->model->SetPreciomayoristaropa($id);
+        header("Location: " . BASE_URL);
+    }
+    public function SetStockmayoristaropa($id){
+        $this->checkLogIn();
+        $this->model->SetStockmayoristaropa($id);
+        header("Location: " . BASE_URL);
+    }
+    public function SetImagenesmayoristaropa($id){
+        $this->checkLogIn();
+        $this->model->SetImagenesmayoristaropa($id);
+        header("Location: " . BASE_URL);
+    }
+    public function BorrarProductomayoristaropa($id){
+        $this->checkLogIn();
+        $this->model->BorrarProductomayoristaropa($id);
         header("Location: " . BASE_URL);
     }
 }
-
-
 ?>

@@ -19,13 +19,21 @@ if($action == ''){
         $partesURL = explode("/", $action);
 
         if($partesURL[0] == "mayoristaropa"){
-            $controller->GetTareas();
+            $controller->Getmayoristaropa();
         }elseif($partesURL[0] == "insertar") {
-            $controller->InsertarTarea();
-        }elseif($partesURL[0] == "finalizar") {
-            $controller->FinalizarTarea($partesURL[1]);
-        }elseif($partesURL[0] == "borrar") {
-            $controller->BorrarTarea($partesURL[1]);
+            $controller->Insertarmayoristaropa();
+        }elseif($partesURL[0] == "setid_categoria") {
+            $controller->SetId_categoria($partesURL[1]);
+        }elseif($partesURL[0] == "setdescripcion") {
+            $controller->SetDescripcionmayoristaropa($partesURL[1]);
+        }elseif($partesURL[0] == "setprecio") {
+            $controller->SetPreciomayoristaropa($partesURL[1]);
+        }elseif($partesURL[0] == "setstock") {
+            $controller->SetStockmayoristaropa($partesURL[1]);
+        }elseif($partesURL[0] == "setimagen") {
+            $controller->SetImagenesmayoristaropa($partesURL[1]);
+        }elseif($partesURL[0] == "borrarproducto") {
+            $controller->BorrarProductomayoristaropa($partesURL[1]);
         }elseif($partesURL[0] == "login") {
             $controllerUser = new UserController();
             $controllerUser->Login();

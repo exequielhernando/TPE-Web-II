@@ -16,6 +16,13 @@ class UserView {
         $smarty->assign('BASE_URL',BASE_URL);
         $smarty->display('templates/login.tpl');
     }
+    public function DisplayRegistro(){
+
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"Registro");
+        $smarty->assign('BASE_URL',BASE_URL);
+        $smarty->display('templates/registro.tpl');
+    }
 }
 
 ?>
