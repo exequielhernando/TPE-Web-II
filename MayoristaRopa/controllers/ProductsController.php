@@ -41,6 +41,19 @@ class ProductsController {
         
     }
 
+    public function DetailsProduct(){
+
+        //poner el metodo que te muestre un solo producto y le pasas el id
+        $Products = $this->model->GetProducts();
+
+        //QUE TE LLEVE AL SMARTY DE PRODUCT
+        $this->view->DisplayEditProductsId($Products);
+
+        
+    }
+
+
+    
     public function GetEditProducts(){
         $this->checkLogIn();
         $Products = $this->model->GetProducts();

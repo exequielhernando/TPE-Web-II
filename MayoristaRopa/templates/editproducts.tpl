@@ -4,7 +4,8 @@
           <table class="table table-hover">
          <thead class="thead-dark">
           <tr>
-                 <th scope="col">id_Product</th>
+                  <th scope="col">id_Product</th>
+                  <th scope="col">Name</th>
                   <th scope="col">Description</th>
                   <th scope="col">Price</th>
                   <th scope="col">Stock</th>
@@ -17,7 +18,8 @@
         <tbody class="contenedor-tabla" >
           {foreach from=$list_Products item=products}
             <tr>
-                <th scope="col">{$products->id_product}</th>
+                  <th scope="col">{$products->id_product}</th>
+                  <th scope="col">{$products->name}</th>
                   <th scope="col">{$products->description}</th>
                   <th scope="col">{$products->price}</th>
                   <th scope="col">{$products->stock}</th>
@@ -43,7 +45,17 @@
           <input type="number" class="form-control" id="price" name="price" aria-describedby="price" placeholder="price">
           <input type="number" class="form-control" id="stock" name="stock" aria-describedby="stock" placeholder="stock">
           <input type="input" class="form-control-center" id="image" name="image" aria-describedby="image" placeholder="image">
-          <input type="number" class="form-control-center" id="id_category" name="id_category" aria-describedby="id_category" placeholder="id_category">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+          </div>
+          <input type="input" class="form-control-center" id="id_category" name="id_category" aria-describedby="id_category" placeholder="id_category">
 
           
         <button type="submit" class="btn btn-primary">Add Product</button>

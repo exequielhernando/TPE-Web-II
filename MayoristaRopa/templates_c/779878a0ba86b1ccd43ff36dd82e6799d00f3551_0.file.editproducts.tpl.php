@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-26 19:49:52
+/* Smarty version 3.1.33, created on 2019-10-26 20:53:12
   from 'C:\xampp\htdocs\MayoristaRopa\templates\editproducts.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db487409604e7_68390193',
+  'unifunc' => 'content_5db49618df9a99_59218646',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '779878a0ba86b1ccd43ff36dd82e6799d00f3551' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\editproducts.tpl',
-      1 => 1572112061,
+      1 => 1572115990,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db487409604e7_68390193 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db49618df9a99_59218646 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navadm.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> 
@@ -31,7 +31,8 @@ $_smarty_tpl->_subTemplateRender("file:navadm.tpl", $_smarty_tpl->cache_id, $_sm
           <table class="table table-hover">
          <thead class="thead-dark">
           <tr>
-                 <th scope="col">id_Product</th>
+                  <th scope="col">id_Product</th>
+                  <th scope="col">Name</th>
                   <th scope="col">Description</th>
                   <th scope="col">Price</th>
                   <th scope="col">Stock</th>
@@ -48,7 +49,9 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['products']->value) {
 ?>
             <tr>
-                <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->id_product;?>
+                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->id_product;?>
+</th>
+                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->name;?>
 </th>
                   <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->description;?>
 </th>
@@ -85,7 +88,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
           <input type="number" class="form-control" id="price" name="price" aria-describedby="price" placeholder="price">
           <input type="number" class="form-control" id="stock" name="stock" aria-describedby="stock" placeholder="stock">
           <input type="input" class="form-control-center" id="image" name="image" aria-describedby="image" placeholder="image">
-          <input type="number" class="form-control-center" id="id_category" name="id_category" aria-describedby="id_category" placeholder="id_category">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+          </div>
+          <input type="input" class="form-control-center" id="id_category" name="id_category" aria-describedby="id_category" placeholder="id_category">
 
           
         <button type="submit" class="btn btn-primary">Add Product</button>

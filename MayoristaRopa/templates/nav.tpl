@@ -4,6 +4,8 @@
                          <div class="collapse navbar-collapse" id="navcol-1">
                                 <ul class="nav navbar-nav ml-auto">
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="http://localhost/MayoristaRopa/products" style="color:#ffffff;"><i class="fa fa-user-circle-o"></i> Products</a></li>
+                                        <li class="nav-item" role="presentation"><a class="nav-link active" href="http://localhost/MayoristaRopa/category" style="color:#ffffff;"><i class="fa fa-user-circle-o"></i> Category</a></li>
+
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="http://localhost/MayoristaRopa/signup" style="color:#ffffff;"><i class="fa fa-star-o"></i> SignUp</a></li>
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="http://localhost/MayoristaRopa/signin" style="color:#ffffff;"><i class="fa fa-sign-in"></i> SignIn</a></li>
                                 </ul>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-26 01:46:24
+/* Smarty version 3.1.33, created on 2019-10-26 21:00:30
   from 'C:\xampp\htdocs\MayoristaRopa\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db38950de3450_11729343',
+  'unifunc' => 'content_5db497ce444be2_19193952',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '41f81406008d0acc8bb486bb063c40904fc33923' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\header.tpl',
-      1 => 1571985575,
+      1 => 1572116423,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db38950de3450_11729343 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db497ce444be2_19193952 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
             <html lang="en">
             <head>
@@ -33,6 +33,7 @@ function content_5db38950de3450_11729343 (Smarty_Internal_Template $_smarty_tpl)
                 <title><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </title>
                 <link rel="stylesheet" href="css/style.css">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
                 <link rel="stylesheet" href="css/bootstrap.min.css">
                 <link rel="icon" type="image/jpg" media="screen" href="images/icono.jpg">
             </head>

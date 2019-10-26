@@ -12,6 +12,8 @@ $action = $_GET["action"];
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 define("URL_PRODUCTS", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/products');
+define("URL_CATEGORY", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/Ca');
+
 define("BASE_FORMEDITPRODUCT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/formeditproduct');
 define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
 define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
@@ -25,21 +27,23 @@ $controllercate = new CategoryController();
 
 if($action == ''){
     $controller->GetProducts();
-    $controllercate->GetCategoria();
 }else{
     if (isset($action)){
         $partesURL = explode("/", $action);
 
         if($partesURL[0] == "products"){
             $controller->GetProducts();
+        }elseif($partesURL[0] == "category") {
             $controllercate->GetCategoria();
         }elseif($partesURL[0] == "editproducts") {
             $controller->GetEditProducts();
         }elseif($partesURL[0] == "editcategory") {
             $controllercate->GetEditCategoria();
-
         }elseif($partesURL[0] == "insertproduct") {
             $controller->InsertProduct();
+        }
+        elseif($partesURL[0] == "product") {
+            $controller->DetailsProduct();
         }
         elseif($partesURL[0] == "insertcategory") {
             $controllercate->InsertCategory();
