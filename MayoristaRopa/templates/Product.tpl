@@ -20,7 +20,7 @@
                   <th scope="col">{$products->price}</th>
                   <th scope="col">{$products->stock}</th>
                   <th scope="col">{$products->image}</th>
-                  <th scope="col">{$products->id_category}</th>
+                  <th scope="col">{$products->nameCat}</th>
 
 
             </tr>

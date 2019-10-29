@@ -5,8 +5,8 @@
       <thead class="thead-dark">
           <tr>
                   <th scope="col">Name</th>
-                  <th scope="col">id_Category</th>
-                  <th scope="col"> Details</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Details</th>
 
 
             </tr> 

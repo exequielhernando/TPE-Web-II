@@ -24,7 +24,7 @@
                   <th scope="col">{$products->price}</th>
                   <th scope="col">{$products->stock}</th>
                   <th scope="col">{$products->image}</th>
-                  <th scope="col">{$products->id_category}</th>
+                  <th scope="col">{$products->nameCat}</th>
                   <th scope="col"> <a href="BorrarOneProduct/{$products->id_product}">BORRAR</th>
                   <th scope="col"> <a href="FormEditProduct/{$products->id_product}">EDITAR</th>
 

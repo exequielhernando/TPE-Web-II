@@ -12,7 +12,8 @@ class ProductsModel {
     }		
 
     public function GetProductId($id){
-        $sentencia = $this->db->prepare( "SELECT * from producto WHERE id_product=?");
+        //ACA FALTA MODIFICAR POR QUE EL NAME NO ME LO MUESTRA BIEN EN LUGAR DE PONER LA CATEGORIA TAMBIEN.
+        $sentencia = $this->db->prepare( "SELECT *, C.name as nameCat from producto P join categoria C on P.id_category = C.id_category WHERE id_product=?");
         $sentencia->execute(array($id));
         $Product = $sentencia->fetchAll(PDO::FETCH_OBJ);
         //var_dump($Product[0]->description); die;

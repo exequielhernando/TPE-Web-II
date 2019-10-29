@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-29 02:29:28
+/* Smarty version 3.1.33, created on 2019-10-29 02:54:31
   from 'C:\xampp\htdocs\MayoristaRopa\templates\editproducts.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db795f812e1c6_87426210',
+  'unifunc' => 'content_5db79bd76a9bd4_71976288',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '779878a0ba86b1ccd43ff36dd82e6799d00f3551' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\editproducts.tpl',
-      1 => 1572312564,
+      1 => 1572314069,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db795f812e1c6_87426210 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db79bd76a9bd4_71976288 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navadm.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> 
@@ -61,7 +61,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['products']->value) {
 </th>
                   <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->image;?>
 </th>
-                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->id_category;?>
+                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->nameCat;?>
 </th>
                   <th scope="col"> <a href="BorrarOneProduct/<?php echo $_smarty_tpl->tpl_vars['products']->value->id_product;?>
 ">BORRAR</th>
