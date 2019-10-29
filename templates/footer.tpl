@@ -1,5 +1,5 @@
         <footer>
-                        <div class="row">
+                        <div class="row gradient black padd">
                             <div class="col-sm-6 col-md-4 footer-navigation">
                                 <p class="links"><a href="#"></a></p>
                                 <p class="company-name">MayoristaExpress © 2019 </p>

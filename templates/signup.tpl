@@ -3,7 +3,7 @@
          <div class="row">
                 <div class="col-4"> 
                         </div>
-                <div class="col-4 formmayor">    
+                <div class="col-4  formmayor">    
                 <form action="registrarse" method="POST">
                          <div class="form-group">
                                 <label for="usuario">Usuario:</label>
@@ -30,7 +30,7 @@
                          <label for="apellido">Apellido:</label>
                         <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname" placeholder="lastname">
                 </div>
-                <div><button type="submit" class="btn btn-danger btn-block colorbotonsubmit formpost" value="registrarse">SignUp</button></div>
+                <div><button type="submit" class="btn btn-primary btn-block colorbotonsubmit formpost" value="registrarse">Sign Up</button></div>
                 </form>
                 </div>
                 <div class="col-4"> 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-29 02:27:09
+/* Smarty version 3.1.33, created on 2019-10-29 08:14:07
   from 'C:\xampp\htdocs\MayoristaRopa\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db7956d00a0b8_18934009',
+  'unifunc' => 'content_5db7e6bfd77ed8_23000123',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '981b38feda185d5ee7d5bbadc9ad3be4a712d15a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\footer.tpl',
-      1 => 1571985575,
+      1 => 1572333231,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db7956d00a0b8_18934009 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db7e6bfd77ed8_23000123 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <footer>
-                        <div class="row">
+                        <div class="row gradient black padd">
                             <div class="col-sm-6 col-md-4 footer-navigation">
                                 <p class="links"><a href="#"></a></p>
                                 <p class="company-name">MayoristaExpress © 2019 </p>

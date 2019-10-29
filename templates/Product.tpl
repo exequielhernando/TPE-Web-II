@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 {include file="nav.tpl"}
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered tabla">
       <thead class="thead">
           <tr>
                   <th scope="col">Name</th>
@@ -16,11 +16,11 @@
           {foreach from=$product item=products}
             <tr>
                   <td scope="col">{$products->name}</td>
-                  <th scope="col">{$products->description}</th>
-                  <th scope="col">{$products->price}</th>
-                  <th scope="col">{$products->stock}</th>
-                  <th scope="col">{$products->image}</th>
-                  <th scope="col">{$products->nameCat}</th>
+                  <td scope="col">{$products->description}</th>
+                  <td scope="col">{$products->price}</th>
+                  <td scope="col">{$products->stock}</th>
+                  <td scope="col">{$products->image}</th>
+                  <td scope="col">{$products->nameCat}</th>
 
 
             </tr>

@@ -10,6 +10,5 @@
                 <link rel="stylesheet" href="css/style.css">
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
                 <link rel="stylesheet" href="css/bootstrap.min.css">
-                <link rel="icon" type="image/jpg" media="screen" href="images/icono.jpg">
             </head>
             <body>            

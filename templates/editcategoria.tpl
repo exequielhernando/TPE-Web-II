@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 {include file="navadm.tpl"} 
-             <table class="table table-hover">
+             <table class="table table-hover table-bordered tabla">
       <thead class="thead-dark">
           <tr>
                   <th scope="col">id_Category</th>
@@ -13,11 +13,11 @@
         <tbody class="contenedor-tabla" >
           {foreach from=$list_Category item=categoria}
             <tr>
-                  <th scope="col">{$categoria->id_category}</th>
-                  <th scope="col">{$categoria->name}</th>
-                  <th scope="col">{$categoria->description}</th>
-                  <th scope="col"> <a href="BorrarOneCategory/{$categoria->id_category}">BORRAR</th>
-                  <th scope="col"> <a href="editCategory/{$categoria->id_category}">Put</th>
+                  <td scope="col">{$categoria->id_category}</t>
+                  <td scope="col">{$categoria->name}</td>
+                  <td scope="col">{$categoria->description}</td>
+                  <td scope="col"> <a href="BorrarOneCategory/{$categoria->id_category}">BORRAR</td>
+                  <td scope="col"> <a href="editCategory/{$categoria->id_category}">EDITAR</td>
             </tr>
         {/foreach}
       </tbody>
@@ -29,13 +29,19 @@
   </div>
  <div class="col-4 fondoturro">
       <h2>Add Category</h2>
-      <div>
+      <div class="forms">
       <form method="post" action="insertcategory"">
-          <label for="name">Name</label>
+      <div class="form-group">
+          <label for="name">Name:</label>
           <input type="text" class="form-control" id="idForm" name="name"  placeholder="name">
-          <label for="description">Description</label>
+      </div>
+      <div class="form-group">
+          <label for="description">Description:</label>
           <input type="text" class="form-control" id="idForm" name="description"  placeholder="description">
-        <button type="submit" class="btn btn-primary">Put Category</button>
+        </div>
+        <div class="center">
+        <button type="submit" class="btn btn-primary btn-block colorbotonsubmit formpost">Add</button>
+      </div>
       </form>
       </div>
     </div>

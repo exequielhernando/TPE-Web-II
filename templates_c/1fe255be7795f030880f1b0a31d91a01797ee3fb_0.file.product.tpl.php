@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-29 02:51:02
+/* Smarty version 3.1.33, created on 2019-10-29 07:37:17
   from 'C:\xampp\htdocs\MayoristaRopa\templates\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db79b06e59138_35035764',
+  'unifunc' => 'content_5db7de1d16fab0_45653900',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1fe255be7795f030880f1b0a31d91a01797ee3fb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\product.tpl',
-      1 => 1572313858,
+      1 => 1572330616,
       2 => 'file',
     ),
   ),
@@ -23,11 +23,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db79b06e59138_35035764 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db7de1d16fab0_45653900 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered tabla">
       <thead class="thead">
           <tr>
                   <th scope="col">Name</th>

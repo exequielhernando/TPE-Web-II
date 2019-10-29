@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-29 02:53:07
+/* Smarty version 3.1.33, created on 2019-10-29 07:43:09
   from 'C:\xampp\htdocs\MayoristaRopa\templates\products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db79b839f7d37_38096142',
+  'unifunc' => 'content_5db7df7d8694d5_01338952',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c7d23d145631d861d86520b54b5d12a0f15e5819' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\products.tpl',
-      1 => 1572313987,
+      1 => 1572331388,
       2 => 'file',
     ),
   ),
@@ -23,12 +23,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db79b839f7d37_38096142 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db7df7d8694d5_01338952 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-          <table class="table table-hover">
+          <table class="table table-hover table-bordered tabla">
       <thead class="thead-dark">
           <tr>
                   <th scope="col">Name</th>
@@ -38,18 +38,18 @@ $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smart
 
             </tr> 
           </thead>
-        <tbody class="contenedor-tabla" >
+        <tbody class="contenedor-tabla nolink" >
           <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['list_Products']->value, 'products');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['products']->value) {
 ?>
             <tr>
-                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->name;?>
+                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->name;?>
 </th>
-                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->nameCat;?>
+                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->nameCat;?>
 </th>
-                  <th scope="col"> <a href="product/<?php echo $_smarty_tpl->tpl_vars['products']->value->id_product;?>
+                  <td scope="col"> <a href="product/<?php echo $_smarty_tpl->tpl_vars['products']->value->id_product;?>
 ">Item</th>
 
 

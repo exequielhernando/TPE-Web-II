@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-29 02:59:41
+/* Smarty version 3.1.33, created on 2019-10-29 06:51:25
   from 'C:\xampp\htdocs\MayoristaRopa\templates\signup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db79d0d077ae8_97616640',
+  'unifunc' => 'content_5db7d35d26b638_29790974',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '36bb52752d872c45783013c69287feced4ce2734' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\signup.tpl',
-      1 => 1571985575,
+      1 => 1572328228,
       2 => 'file',
     ),
   ),
@@ -23,14 +23,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db79d0d077ae8_97616640 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db7d35d26b638_29790974 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
          <div class="row">
                 <div class="col-4"> 
                         </div>
-                <div class="col-4 formmayor">    
+                <div class="col-4  formmayor">    
                 <form action="registrarse" method="POST">
                          <div class="form-group">
                                 <label for="usuario">Usuario:</label>
@@ -57,7 +57,7 @@ $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smart
                          <label for="apellido">Apellido:</label>
                         <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname" placeholder="lastname">
                 </div>
-                <div><button type="submit" class="btn btn-danger btn-block colorbotonsubmit formpost" value="registrarse">SignUp</button></div>
+                <div><button type="submit" class="btn btn-primary btn-block colorbotonsubmit formpost" value="registrarse">Sign Up</button></div>
                 </form>
                 </div>
                 <div class="col-4"> 
