@@ -1,6 +1,8 @@
 <?php
 require_once "./Models/ProductsModel.php";
 require_once "./Views/ProductsView.php";
+require_once "./Models/ProductsModel.php";
+
 
 class ProductsController {
 
@@ -41,15 +43,9 @@ class ProductsController {
         
     }
 
-    public function DetailsProduct(){
-
-        //poner el metodo que te muestre un solo producto y le pasas el id
-        $Products = $this->model->GetProducts();
-
-        //QUE TE LLEVE AL SMARTY DE PRODUCT
-        $this->view->DisplayEditProductsId($Products);
-
-        
+    public function DetailsProduct($id){
+        $Product = $this->model->GetProductId($id);
+        $this->view->DisplayOnlyProductId($Product);
     }
 
 
@@ -57,22 +53,23 @@ class ProductsController {
     public function GetEditProducts(){
         $this->checkLogIn();
         $Products = $this->model->GetProducts();
-        $this->view->DisplayEditProductsId($Products);
-
-        
+        $Category = $this->modelcate->GetCategoria();
+        // get categorias del model de categorias y pasarlos a la vista
+        $this->view->DisplayEditProductsId($Products,$Category);   
     }
 //----------------------INSERTA PRODUCTOS EN LA TABLA DE LA BASE DE DATOS Y LO MUESTRA EN EL SMARTY PRODUCT
 public function InsertProduct(){
     $this->checkLogIn(); 
-    $id_product= $_POST['id_product'];
+    $name= $_POST['name'];
     $description= $_POST['description'];
     $price= $_POST['price'];
     $stock= $_POST['stock'];
     $image= $_POST['image'];
-    $id_category= $_POST ['id_category'];
-    $this->model->InsertProduct($id_product,$description,$price,$stock,$image,$id_category);
+    $id_category =$_POST['id_category'];
+    $this->model->InsertProduct($name,$description,$price,$stock,$image,$id_category);
     $Products = $this->model->GetProducts();
-    $this->view->DisplayEditProductsId($Products);
+    $Category = $this->modelcate->GetCategoria();
+    $this->view->DisplayEditProductsId($Products,$Category);
     }
 
     public function SetId_categoriaProducts($id){
@@ -107,7 +104,8 @@ public function InsertProduct(){
         $this->checkLogIn();
         $this->model->BorrarOneProduct($id_product);
         $Products = $this->model->GetProducts();
-        $this->view->DisplayEditProductsId($Products);
+        $Category = $this->modelcate->GetCategoria();
+        $this->view->DisplayEditProductsId($Products,$Category);
 
     }
     public function EditProducts($id_product){

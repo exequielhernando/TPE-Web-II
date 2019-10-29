@@ -40,30 +40,30 @@
       <h2>Add Product</h2>
       <div>
       <form method="post" action="insertproduct">
-          <input type="number" class="form-control" id="id_category" name="id_product" aria-describedby="id_product"  placeholder="id_product" >
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" aria-describedby="name" placeholder="name">
+          <label for="description">Description</label>
           <input type="text" class="form-control" id="description" name="description" aria-describedby="description" placeholder="description">
+          <label for="price">Price</label>
           <input type="number" class="form-control" id="price" name="price" aria-describedby="price" placeholder="price">
+          <label for="stock">Stock</label>
           <input type="number" class="form-control" id="stock" name="stock" aria-describedby="stock" placeholder="stock">
+          <label for="image">Image</label>
           <input type="input" class="form-control-center" id="image" name="image" aria-describedby="image" placeholder="image">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             Dropdown button
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+          <label for="categoria">Categoria</label>
+          <div class="select">
+           <select id="id_category" name ="id_category" class="browser-default custom-select">
+              {foreach from=$list_Category item=categoria}
+                  <option value="{$categoria->id_category}">{$categoria->name}</option>          
+            {/foreach}
+           </select>
           </div>
-          </div>
-          <input type="input" class="form-control-center" id="id_category" name="id_category" aria-describedby="id_category" placeholder="id_category">
-
-          
         <button type="submit" class="btn btn-primary">Add Product</button>
       </form>
       </div>
     </div>
     </div>
-<div class="col-4">
+<div class="col-4"
   </div>
 </div>
 {include file="footer.tpl"}

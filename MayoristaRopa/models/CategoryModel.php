@@ -19,13 +19,12 @@ class CategoryModel {
     }
     public function BorrarOneCategory($id_category){
         $sentencia = $this->db->prepare("DELETE FROM categoria WHERE id_category=?");
-        echo ($id_category);
         $sentencia->execute(array($id_category));
     }
 
-    public function InsertCategory($id_category,$name,$description){
-        $sentencia = $this->db->prepare("INSERT INTO categoria(id_category,name,description) VALUES(?,?,?)");
-        $sentencia->execute(array($id_category,$name,$description));
+    public function InsertCategory($name,$description){
+        $sentencia = $this->db->prepare("INSERT INTO categoria(name,description) VALUES(?,?)");
+        $sentencia->execute(array($name,$description));
     }
 }
 ?>

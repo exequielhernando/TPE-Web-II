@@ -48,11 +48,10 @@ class CategoryController {
 
     public function InsertCategory(){
         $this->controller->checkLogIn(); 
-        $id_category= $_POST['id_category'];
         $name= $_POST['name'];
         $description= $_POST['description'];
       
-        $this->model->InsertCategory($id_category,$name,$description);
+        $this->model->InsertCategory($name,$description);
         $Category = $this->model->GetCategoria();
     
         $this->view->DisplayEditCategoriaId($Category);

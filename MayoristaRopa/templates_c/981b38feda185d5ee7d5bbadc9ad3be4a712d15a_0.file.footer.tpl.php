@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-26 01:46:24
+/* Smarty version 3.1.33, created on 2019-10-29 02:27:09
   from 'C:\xampp\htdocs\MayoristaRopa\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db38950e1df62_87376895',
+  'unifunc' => 'content_5db7956d00a0b8_18934009',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db38950e1df62_87376895 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db7956d00a0b8_18934009 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <footer>
                         <div class="row">
                             <div class="col-sm-6 col-md-4 footer-navigation">

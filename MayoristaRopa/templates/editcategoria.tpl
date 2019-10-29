@@ -31,8 +31,9 @@
       <h2>Add Category</h2>
       <div>
       <form method="post" action="insertcategory"">
-          <input type="number" class="form-control" id="idForm" name="id_category"  placeholder="id_category">
+          <label for="name">Name</label>
           <input type="text" class="form-control" id="idForm" name="name"  placeholder="name">
+          <label for="description">Description</label>
           <input type="text" class="form-control" id="idForm" name="description"  placeholder="description">
         <button type="submit" class="btn btn-primary">Put Category</button>
       </form>

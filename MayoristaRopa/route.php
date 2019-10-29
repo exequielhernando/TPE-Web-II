@@ -42,13 +42,12 @@ if($action == ''){
         }elseif($partesURL[0] == "insertproduct") {
             $controller->InsertProduct();
         }
-        elseif($partesURL[0] == "product") {
-            $controller->DetailsProduct();
-        }
         elseif($partesURL[0] == "insertcategory") {
             $controllercate->InsertCategory();
         }
-        elseif($partesURL[0] == "setid_categoria") {
+        elseif($partesURL[0] == "product") {
+            $controller->DetailsProduct($partesURL[1]);
+        }elseif($partesURL[0] == "setid_categoria") {
             $controller->SetId_categoriaProducts($partesURL[1]);
         }elseif($partesURL[0] == "setdescripcion") {
             $controller->SetDescripcionProducts($partesURL[1]);

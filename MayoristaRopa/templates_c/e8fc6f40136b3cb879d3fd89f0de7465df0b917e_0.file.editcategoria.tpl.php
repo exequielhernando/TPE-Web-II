@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-26 01:47:02
+/* Smarty version 3.1.33, created on 2019-10-29 02:27:20
   from 'C:\xampp\htdocs\MayoristaRopa\templates\editcategoria.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db3897654a2c2_96728915',
+  'unifunc' => 'content_5db79578e93b12_87974125',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e8fc6f40136b3cb879d3fd89f0de7465df0b917e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\editcategoria.tpl',
-      1 => 1572040027,
+      1 => 1572312405,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db3897654a2c2_96728915 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db79578e93b12_87974125 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navadm.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> 
@@ -70,8 +70,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       <h2>Add Category</h2>
       <div>
       <form method="post" action="insertcategory"">
-          <input type="number" class="form-control" id="idForm" name="id_category"  placeholder="id_category">
+          <label for="name">Name</label>
           <input type="text" class="form-control" id="idForm" name="name"  placeholder="name">
+          <label for="description">Description</label>
           <input type="text" class="form-control" id="idForm" name="description"  placeholder="description">
         <button type="submit" class="btn btn-primary">Put Category</button>
       </form>

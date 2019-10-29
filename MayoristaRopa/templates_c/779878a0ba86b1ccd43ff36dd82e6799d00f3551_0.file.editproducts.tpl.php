@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-26 20:53:12
+/* Smarty version 3.1.33, created on 2019-10-29 02:29:28
   from 'C:\xampp\htdocs\MayoristaRopa\templates\editproducts.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db49618df9a99_59218646',
+  'unifunc' => 'content_5db795f812e1c6_87426210',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '779878a0ba86b1ccd43ff36dd82e6799d00f3551' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\editproducts.tpl',
-      1 => 1572115990,
+      1 => 1572312564,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db49618df9a99_59218646 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db795f812e1c6_87426210 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navadm.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> 
@@ -83,30 +83,39 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       <h2>Add Product</h2>
       <div>
       <form method="post" action="insertproduct">
-          <input type="number" class="form-control" id="id_category" name="id_product" aria-describedby="id_product"  placeholder="id_product" >
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" aria-describedby="name" placeholder="name">
+          <label for="description">Description</label>
           <input type="text" class="form-control" id="description" name="description" aria-describedby="description" placeholder="description">
+          <label for="price">Price</label>
           <input type="number" class="form-control" id="price" name="price" aria-describedby="price" placeholder="price">
+          <label for="stock">Stock</label>
           <input type="number" class="form-control" id="stock" name="stock" aria-describedby="stock" placeholder="stock">
+          <label for="image">Image</label>
           <input type="input" class="form-control-center" id="image" name="image" aria-describedby="image" placeholder="image">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             Dropdown button
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+          <label for="categoria">Categoria</label>
+          <div class="select">
+           <select id="id_category" name ="id_category" class="browser-default custom-select">
+              <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['list_Category']->value, 'categoria');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
+?>
+                  <option value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value->id_category;?>
+"><?php echo $_smarty_tpl->tpl_vars['categoria']->value->name;?>
+</option>          
+            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+           </select>
           </div>
-          </div>
-          <input type="input" class="form-control-center" id="id_category" name="id_category" aria-describedby="id_category" placeholder="id_category">
-
-          
         <button type="submit" class="btn btn-primary">Add Product</button>
       </form>
       </div>
     </div>
     </div>
-<div class="col-4">
+<div class="col-4"
   </div>
 </div>
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

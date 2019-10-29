@@ -5,10 +5,6 @@
       <thead class="thead-dark">
           <tr>
                   <th scope="col">Name</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Stock</th>
-                  <th scope="col">Image</th>
                   <th scope="col">id_Category</th>
                   <th scope="col"> Details</th>
 
@@ -19,12 +15,8 @@
           {foreach from=$list_Products item=products}
             <tr>
                   <th scope="col">{$products->name}</th>
-                  <th scope="col">{$products->description}</th>
-                  <th scope="col">{$products->price}</th>
-                  <th scope="col">{$products->stock}</th>
-                  <th scope="col">{$products->image}</th>
-                  <th scope="col">{$products->id_category}</th>
-                  <th scope="col"> <a href="Product/{$products->id_product}">Item</th>
+                  <th scope="col">{$products->nameCat}</th>
+                  <th scope="col"> <a href="product/{$products->id_product}">Item</th>
 
 
             </tr>

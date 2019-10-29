@@ -18,13 +18,13 @@ class ProductsView {
         $smarty->display('templates/products.tpl');
 
     }
-
-    public function DisplayEditProductsId($Products){
+    public function DisplayEditProductsId($Products,$Category){
 
         $smarty = new Smarty();
         $smarty->assign('titulo',"EditProducts");
         $smarty->assign('BASE_URL',BASE_URL);
         $smarty->assign('list_Products',$Products);
+        $smarty->assign('list_Category',$Category);
         $smarty->display('templates/editproducts.tpl');
 
     }
@@ -44,6 +44,13 @@ class ProductsView {
         $smarty->display('templates/formeditproduct.tpl');
 
     }
+    public function DisplayOnlyProductId($Product){
 
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"product");
+        $smarty->assign('product',$Product);
+        $smarty->display('templates/product.tpl');
+
+    }
 }
 ?>  
