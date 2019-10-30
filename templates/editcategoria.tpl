@@ -3,7 +3,6 @@
              <table class="table table-hover table-bordered tabla">
       <thead class="thead-dark">
           <tr>
-                  <th scope="col">id_Category</th>
                   <th scope="col">Name</th>
                   <th scope="col">Description</th>
                   <th scope="col"> </th>

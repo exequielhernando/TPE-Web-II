@@ -4,7 +4,7 @@ require_once('libs/Smarty.class.php');
 
 
 class ProductsView {
-
+    
     function __construct(){
 
     }
@@ -28,20 +28,21 @@ class ProductsView {
         $smarty->display('templates/editproducts.tpl');
 
     }
-    public function DisplayFormEditProduct(){
-
+    public function DisplayFormEditProduct($Products,$Category){
         $smarty = new Smarty();
         $smarty->assign('titulo',"FormEditProducts");
         $smarty->assign('BASE_URL',BASE_URL);
+        $smarty->assign('list_Products',$Products);
+        $smarty->assign('list_Category',$Category);
         $smarty->display('templates/formeditproduct.tpl');
 
     }
-    public function VerFormEditProduct($product){
-
+    public function VerFormEditProduct($product,$category){
         $smarty = new Smarty();
         $smarty->assign('titulo',"FormEditProducts");
         $smarty->assign('BASE_URL',BASE_URL);
         $smarty->assign('product',$product);
+        $smarty->assign('category',$category);
         $smarty->display('templates/formeditproduct.tpl');
 
     }

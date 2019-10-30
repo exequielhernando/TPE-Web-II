@@ -21,16 +21,10 @@ class ProductsModel {
         $sentencia = $this->db->prepare("INSERT INTO producto(name,description,price,stock,image,id_category) VALUES(?,?,?,?,?,?)");
         $sentencia->execute(array($name,$description,$price,$stock,$image,$id_category));
     }
-    
-    // function EditProduct($name,$description,$price,$stock,$image,$nameCat,$id_product){
-    //     $sentencia = $this->db->prepare("UPDATE producto SET name=?,description=?,price=?,stock=?,image=?,nameCat=? where id_product=?");
-    //     $sentencia->execute(array($name,$description,$price,$stock,$image,$nameCat,$id_product));
-    // }
-    public function SaveEditProduct($name,$description,$price,$stock,$image,$nameCat,$id_product){
-        // var_dump($name,$description,$price,$stock,$image,$nameCat,$id_product);
 
-        $sentencia = $this->db->prepare( "UPDATE producto SET name = ?, description = ?, price = ?, stock = ?, image = ?, nameCat = ? where id_category=?");
-        $sentencia->execute(array($name,$description,$price,$stock,$image,$nameCat,$id_product));
+    public function SaveEditProduct($name,$description,$price,$stock,$image,$id_category,$id_product){
+        $sentencia = $this->db->prepare( "UPDATE producto SET name = ?, description = ?, price = ?, stock = ?, image = ?, id_category = ? WHERE id_product = ? ");
+        $sentencia->execute(array($name,$description,$price,$stock,$image,$id_category,$id_product));
     }
     public function BorrarOneProduct($id_product){
         $sentencia = $this->db->prepare("DELETE FROM producto WHERE id_product=?");

@@ -9,11 +9,18 @@
       <form method="post" action="UpdateProduct">
           <input type="hidden" class="form-control" id="id_product" name="id_product" value="{$product[0]->id_product}">
           <input type="input" class="form-control" id="name" name="name" value="{$product[0]->name}">
-          <input type="input" class="form-control" id="price" name="description" value="{$product[0]->description}">
-          <input type="number" class="form-control" id="stock" name="price" value="{$product[0]->price}">
+          <input type="input" class="form-control" id="description" name="description" value="{$product[0]->description}">
+          <input type="number" class="form-control" id="price" name="price" value="{$product[0]->price}">
           <input type="number" class="form-control" id="stock" name="stock" value="{$product[0]->stock}">
           <input type="input" class="form-control" id="image" name="image" value="{$product[0]->image}">
-          <input type="input" class="form-control" id="nameCat" name="nameCat" value="{$product[0]->nameCat}">
+          {* <input type="input" class="form-control" id="nameCat" name="nameCat" value="{$product[0]->nameCat}"> *}
+          <div class="select">
+            <select id="id_category" name ="id_category" class="browser-default custom-select">
+              {foreach from=$category item=categoria}
+                <option value="{$categoria->id_category}">{$categoria->name}</option>          
+              {/foreach}
+            </select>
+          </div>
           <button type="submit" class="btn btn-primary">Edit Product</button>
       </form>
       </div>

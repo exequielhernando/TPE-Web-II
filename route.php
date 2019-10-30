@@ -37,8 +37,6 @@ if($action == ''){
             $controller->GetProducts();
         }elseif($partesURL[0] == "category") {
             $controllercate->GetCategoria();
-        }elseif($partesURL[0] == "editproducts") {
-            $controller->GetEditProducts();
         }elseif($partesURL[0] == "editcategory") {
             $controllercate->GetEditCategoria();
         }elseif($partesURL[0] == "insertproduct") {
@@ -47,16 +45,6 @@ if($action == ''){
             $controllercate->InsertCategory();
         }elseif($partesURL[0] == "product") {
             $controller->DetailsProduct($partesURL[1]);
-        }elseif($partesURL[0] == "setid_categoria") {
-            $controller->SetId_categoriaProducts($partesURL[1]);
-        }elseif($partesURL[0] == "setdescripcion") {
-            $controller->SetDescripcionProducts($partesURL[1]);
-        }elseif($partesURL[0] == "setprecio") {
-            $controller->SetPrecioProducts($partesURL[1]);
-        }elseif($partesURL[0] == "setstock") {
-            $controller->SetStockProducts($partesURL[1]);
-        }elseif($partesURL[0] == "setimagen") {
-            $controller->SetImagenesProducts($partesURL[1]);
         }elseif($partesURL[0] == "BorrarOneProduct") {
             $controller->BorrarOneProduct($partesURL[1]);
         }elseif($partesURL[0] == "BorrarOneCategory") {
