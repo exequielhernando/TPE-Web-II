@@ -6,16 +6,15 @@
  <div class="col-4 fondoturro">
       <h2>Editar Producto</h2>
       <div>
-      <form method="post" action="UpdateProduct">
-          <input type="number" class="form-control" id="id_category" name="id_product" aria-describedby="id_product"  placeholder="$products->id_product" value="{$products->id_product}>
-          <input type="input" class="form-control" id="price" name="description" aria-describedby="description" placeholder="$products->description" value="{$products->description}>
-          <input type="number" class="form-control" id="stock" name="price" aria-describedby="price" placeholder="$products->price" value="{$products->price}>
-          <input type="number" class="form-control" id="idForm" name="stock" aria-describedby="stock" placeholder="$products->stock" value="{$products->stock}>
-          <input type="input" class="form-control-center" id="image" name="image" aria-describedby="image" placeholder="$products->image" value="{$products->image}>
-          <input type="number" class="form-control-center" id="id_category" name="id_category" aria-describedby="id_category value="{$products->id_category}">
-
-          
-        <button type="submit" class="btn btn-primary">Put Product</button>
+      <form method="POST" action="UpdateProduct">
+          <input type="hidden" class="form-control" id="id_product" name="id_product" value="{$product[0]->id_product}">
+          <input type="input" class="form-control" id="name" name="name" value="{$product[0]->name}">
+          <input type="input" class="form-control" id="price" name="description" value="{$product[0]->description}">
+          <input type="number" class="form-control" id="stock" name="price" value="{$product[0]->price}">
+          <input type="number" class="form-control" id="stock" name="stock" value="{$product[0]->stock}">
+          <input type="input" class="form-control" id="image" name="image" value="{$product[0]->image}">
+          <input type="input" class="form-control" id="nameCat" name="nameCat" value="{$product[0]->nameCat}">
+          <button type="submit" class="btn btn-primary">Edit Product</button>
       </form>
       </div>
     </div>

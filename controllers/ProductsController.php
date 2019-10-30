@@ -52,10 +52,18 @@ class ProductsController {
     
     public function GetEditProducts(){
         $this->checkLogIn();
-        $Products = $this->model->GetProducts();
-        $Category = $this->modelcate->GetCategoria();
-        // get categorias del model de categorias y pasarlos a la vista
-        $this->view->DisplayEditProductsId($Products,$Category);   
+        $id_product = $_POST['id_product'];
+        $name= $_POST['name'];
+        $description= $_POST['description'];
+        $price= $_POST['price'];
+        $stock= $_POST['stock'];
+        $image= $_POST['image'];
+        $nameCat =$_POST['nameCat'];
+        var_dump($id_product);
+        $this->model->EditProduct($name,$description,$price,$stock,$image,$nameCat,$id_product);
+        // $Products = $this->model->GetProducts();
+        // $Category = $this->modelcate->GetCategoria();
+        // $this->view->DisplayEditProductsId($Products,$Category);   
     }
 //----------------------INSERTA PRODUCTOS EN LA TABLA DE LA BASE DE DATOS Y LO MUESTRA EN EL SMARTY PRODUCT
 public function InsertProduct(){
@@ -116,11 +124,13 @@ public function InsertProduct(){
         $this->view->DisplayFormEditProduct($Products);
     }
 
-    public function VerFormEditProduct(){
+    public function VerFormEditProduct($id_product){
         $this->checkLogIn();
-
+        $product = $this->model->GetProductId($id_product);
         //ACA FALTA PASARLE LOS DATOS DE LA TABLA EN EL VALUE DEL
-        $this->view->VerFormEditProduct();
+        // var_dump($product);
+        // die();
+        $this->view->VerFormEditProduct($product);
     }
 
     function UpdateProduct(){

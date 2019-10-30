@@ -21,8 +21,6 @@
                   <td scope="col">{$products->stock}</th>
                   <td scope="col">{$products->image}</th>
                   <td scope="col">{$products->nameCat}</th>
-
-
             </tr>
           {/foreach}
         </tbody>

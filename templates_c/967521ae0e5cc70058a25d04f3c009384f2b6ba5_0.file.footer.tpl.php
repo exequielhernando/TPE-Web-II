@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-29 08:14:07
-  from 'C:\xampp\htdocs\MayoristaRopa\templates\footer.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-30 02:15:17
+  from 'D:\xampp\htdocs\htdocs\TPE-Web-II\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db7e6bfd77ed8_23000123',
+  'unifunc' => 'content_5db8e425d2c199_70764068',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '981b38feda185d5ee7d5bbadc9ad3be4a712d15a' => 
+    '967521ae0e5cc70058a25d04f3c009384f2b6ba5' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\footer.tpl',
-      1 => 1572333231,
+      0 => 'D:\\xampp\\htdocs\\htdocs\\TPE-Web-II\\templates\\footer.tpl',
+      1 => 1572376925,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db7e6bfd77ed8_23000123 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db8e425d2c199_70764068 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <footer>
                         <div class="row gradient black padd">
                             <div class="col-sm-6 col-md-4 footer-navigation">

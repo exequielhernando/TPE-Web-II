@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-29 07:37:17
-  from 'C:\xampp\htdocs\MayoristaRopa\templates\product.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-30 02:15:26
+  from 'D:\xampp\htdocs\htdocs\TPE-Web-II\templates\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db7de1d16fab0_45653900',
+  'unifunc' => 'content_5db8e42ea9dbe3_63016015',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '1fe255be7795f030880f1b0a31d91a01797ee3fb' => 
+    'f6f671d2ec9cb8065592d9d5e5760efe5eb05ac3' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\product.tpl',
-      1 => 1572330616,
+      0 => 'D:\\xampp\\htdocs\\htdocs\\TPE-Web-II\\templates\\product.tpl',
+      1 => 1572397674,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db7de1d16fab0_45653900 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db8e42ea9dbe3_63016015 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -48,18 +48,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars['products']->value) {
             <tr>
                   <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->name;?>
 </td>
-                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->description;?>
+                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->description;?>
 </th>
-                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->price;?>
+                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->price;?>
 </th>
-                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->stock;?>
+                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->stock;?>
 </th>
-                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->image;?>
+                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->image;?>
 </th>
-                  <th scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->nameCat;?>
+                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->nameCat;?>
 </th>
-
-
             </tr>
           <?php
 }

@@ -23,6 +23,8 @@ define("URL_EDITCATEGORIA", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERV
 
 $controller = new ProductsController();
 $controllercate = new CategoryController();
+$controllerUser = new UserController();
+$controllerSignUp = new SignUpController();
 
 
 if($action == ''){
@@ -67,35 +69,27 @@ if($action == ''){
             $controller->EditProducts($partesURL[1]);
         }
         elseif($partesURL[0] == "login") {
-            $controllerUser = new UserController();
             $controllerUser->Login();
 
         }elseif($partesURL[0] == "signin") {
-            $controllerUser = new UserController();
             $controllerUser->Login();
 
         }elseif($partesURL[0] == "iniciarSesion") {
-            $controllerUser = new UserController();
             $controllerUser->IniciarSesion();
 
         }elseif($partesURL[0] == "signup") {
-            $controllerSignUp = new SignUpController();
             $controllerSignUp->SignUp();
 
         }elseif($partesURL[0] == "registrarse") {
-            $controllerUser2 = new SignUpController();
             $controllerUser2->registrarse();
 
         }elseif($partesURL[0] == "logout") {
-            $controllerUser = new UserController();
             $controllerUser->Logout();
         }
         elseif($partesURL[0] == "FormEditProduct") {
-            $controller = new ProductsController();
-            $controller->VerFormEditProduct();
+            $controller->VerFormEditProduct($partesURL[1]);
         }  
         elseif($partesURL[0] == "UpdateProduct") {
-            $controller = new ProductsController();
             $controller->GetEditProducts();
 
         }

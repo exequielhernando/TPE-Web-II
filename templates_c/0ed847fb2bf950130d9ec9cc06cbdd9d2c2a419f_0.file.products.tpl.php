@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-29 07:45:56
-  from 'C:\xampp\htdocs\MayoristaRopa\templates\categoria.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-30 02:15:17
+  from 'D:\xampp\htdocs\htdocs\TPE-Web-II\templates\products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db7e024efac36_93223522',
+  'unifunc' => 'content_5db8e425c3eb26_50966680',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '964ab88cd4598300cf5b1d66c25de9a3cf2960b9' => 
+    '0ed847fb2bf950130d9ec9cc06cbdd9d2c2a419f' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\MayoristaRopa\\templates\\categoria.tpl',
-      1 => 1572331551,
+      0 => 'D:\\xampp\\htdocs\\htdocs\\TPE-Web-II\\templates\\products.tpl',
+      1 => 1572379278,
       2 => 'file',
     ),
   ),
@@ -23,33 +23,36 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db7e024efac36_93223522 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db8e425c3eb26_50966680 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<div class="row">
-  <div class="col-3"></div>
-  <div class="col-6">
 
-             <table class="table table-hover table-bordered tabla">
+          <table class="table table-hover table-bordered tabla">
       <thead class="thead-dark">
           <tr>
                   <th scope="col">Name</th>
-                  <th scope="col">Description</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Details</th>
 
-            </tr>
+
+            </tr> 
           </thead>
-        <tbody class="contenedor-tabla" >
+        <tbody class="contenedor-tabla nolink" >
           <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['list_Category']->value, 'category');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['list_Products']->value, 'products');
 if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
+foreach ($_from as $_smarty_tpl->tpl_vars['products']->value) {
 ?>
             <tr>
-                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['category']->value->name;?>
+                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->name;?>
 </th>
-                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['category']->value->description;?>
+                  <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->nameCat;?>
 </th>
+                  <td scope="col"> <a href="product/<?php echo $_smarty_tpl->tpl_vars['products']->value->id_product;?>
+">Item</th>
+
+
             </tr>
         <?php
 }
@@ -58,10 +61,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       </tbody>
     </table>
   </div>
-  <div class="col-3"></div>
-
-  </div>
-</div>
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> <?php }
 }

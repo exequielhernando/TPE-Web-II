@@ -36,11 +36,12 @@ class ProductsView {
         $smarty->display('templates/formeditproduct.tpl');
 
     }
-    public function VerFormEditProduct(){
+    public function VerFormEditProduct($product){
 
         $smarty = new Smarty();
         $smarty->assign('titulo',"FormEditProducts");
         $smarty->assign('BASE_URL',BASE_URL);
+        $smarty->assign('product',$product);
         $smarty->display('templates/formeditproduct.tpl');
 
     }
@@ -48,6 +49,7 @@ class ProductsView {
 
         $smarty = new Smarty();
         $smarty->assign('titulo',"product");
+        $smarty->assign('BASE_URL',BASE_URL);
         $smarty->assign('product',$Product);
         $smarty->display('templates/product.tpl');
 
