@@ -38,6 +38,22 @@ class CategoryController {
         $this->view->DisplayEditCategoriaId($Category);
        
     }
+    public function GetEditCategoriaId($id_category){
+        $this->controller->checkLogIn();
+        $Category = $this->model->GetCategoriaId($id_category);
+        $this->view->VerFormEditCategory($Category);
+       
+    }
+    public function SaveEditCategory(){
+        $this->controller->checkLogIn();
+        $id_category = $_POST['id_category']; 
+        $name= $_POST['name'];
+        $description= $_POST['description'];
+        $this->model->SaveEditCategory($name,$description,$id_category);
+
+        $Category = $this->model->GetCategoria();
+        $this->view->DisplayEditCategoriaId($Category);
+        }
 
     public function BorrarOneCategory($id_category){
         $this->controller->checkLogIn();

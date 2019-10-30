@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-30 02:15:17
+/* Smarty version 3.1.33, created on 2019-10-30 02:18:59
   from 'D:\xampp\htdocs\htdocs\TPE-Web-II\templates\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db8e425ce7ae7_83443673',
+  'unifunc' => 'content_5db8e503ae11a8_76199284',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '09b2545fa45171e7924fc3ae3eb65718d2865cd3' => 
     array (
       0 => 'D:\\xampp\\htdocs\\htdocs\\TPE-Web-II\\templates\\nav.tpl',
-      1 => 1572397842,
+      1 => 1572398338,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db8e425ce7ae7_83443673 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db8e503ae11a8_76199284 (Smarty_Internal_Template $_smarty_tpl) {
 ?>         <div class="container-fluids all">
          <nav class="navbar navbar-light navbar-expand-md sticky-top  bg-white navigation-clean-button gradient">
-                <div class="container-fluid black"><a class="navbar-brand logo"> MayoristaExpress</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="container-fluid black"><a class="navbar-brand logo" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+"> MayoristaExpress</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                          <div class="collapse navbar-collapse" id="navcol-1">
                                 <ul class="nav navbar-nav ml-auto">
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>

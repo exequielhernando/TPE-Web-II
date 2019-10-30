@@ -47,7 +47,12 @@ class ProductsController {
         $Product = $this->model->GetProductId($id);
         $this->view->DisplayOnlyProductId($Product);
     }
-
+    public function GetProductsAdmin(){
+        $this->checkLogIn();
+        $Products = $this->model->GetProducts();
+        $Category = $this->modelcate->GetCategoria();
+        $this->view->DisplayEditProductsId($Products,$Category);
+    }
 
     
     public function GetEditProducts(){
@@ -59,11 +64,11 @@ class ProductsController {
         $stock= $_POST['stock'];
         $image= $_POST['image'];
         $nameCat =$_POST['nameCat'];
-        var_dump($id_product);
-        $this->model->EditProduct($name,$description,$price,$stock,$image,$nameCat,$id_product);
-        // $Products = $this->model->GetProducts();
-        // $Category = $this->modelcate->GetCategoria();
-        // $this->view->DisplayEditProductsId($Products,$Category);   
+
+        $this->model->SaveEditProduct($name,$description,$price,$stock,$image,$nameCat,$id_product);
+        $Products = $this->model->GetProducts();
+        $Category = $this->modelcate->GetCategoria();
+        $this->view->DisplayEditProductsId($Products,$Category); 
     }
 //----------------------INSERTA PRODUCTOS EN LA TABLA DE LA BASE DE DATOS Y LO MUESTRA EN EL SMARTY PRODUCT
 public function InsertProduct(){
@@ -80,31 +85,31 @@ public function InsertProduct(){
     $this->view->DisplayEditProductsId($Products,$Category);
     }
 
-    public function SetId_categoriaProducts($id){
-        $this->checkLogIn();
-        $this->model->SetId_categoriaProducts($id);
-        header("Location: " . BASE_URL);
-    }
-    public function SetDescripcionProducts($id){
-        $this->checkLogIn();
-        $this->model->SetDescripcionProducts($id);
-        header("Location: " . BASE_URL);
-    }
-    public function SetPrecioProducts($id){
-        $this->checkLogIn();
-        $this->model->SetPrecioProducts($id);
-        header("Location: " . BASE_URL);
-    }
-    public function SetStockProducts($id){
-        $this->checkLogIn();
-        $this->model->SetStockProducts($id);
-        header("Location: " . BASE_URL);
-    }
-    public function SetImagenesProducts($id){
-        $this->checkLogIn();
-        $this->model->SetImagenesProducts($id);
-        header("Location: " . BASE_URL);
-    }
+    // public function SetId_categoriaProducts($id){
+    //     $this->checkLogIn();
+    //     $this->model->SetId_categoriaProducts($id);
+    //     header("Location: " . BASE_URL);
+    // }
+    // public function SetDescripcionProducts($id){
+    //     $this->checkLogIn();
+    //     $this->model->SetDescripcionProducts($id);
+    //     header("Location: " . BASE_URL);
+    // }
+    // public function SetPrecioProducts($id){
+    //     $this->checkLogIn();
+    //     $this->model->SetPrecioProducts($id);
+    //     header("Location: " . BASE_URL);
+    // }
+    // public function SetStockProducts($id){
+    //     $this->checkLogIn();
+    //     $this->model->SetStockProducts($id);
+    //     header("Location: " . BASE_URL);
+    // }
+    // public function SetImagenesProducts($id){
+    //     $this->checkLogIn();
+    //     $this->model->SetImagenesProducts($id);
+    //     header("Location: " . BASE_URL);
+    // }
    
    
    //ESTO FUNCA PIOLI
@@ -117,7 +122,6 @@ public function InsertProduct(){
 
     }
     public function EditProducts($id_product){
-        echo($id_product);
         $this->checkLogIn();
         $this->model->EditProducts($id_product);
         $Products = $this->model->GetProducts();
@@ -127,17 +131,14 @@ public function InsertProduct(){
     public function VerFormEditProduct($id_product){
         $this->checkLogIn();
         $product = $this->model->GetProductId($id_product);
-        //ACA FALTA PASARLE LOS DATOS DE LA TABLA EN EL VALUE DEL
-        // var_dump($product);
-        // die();
         $this->view->VerFormEditProduct($product);
     }
 
-    function UpdateProduct(){
-        $this->model->UpdateProduct($id,$_POST['id_product'],$_POST['description'],$_POST['price'],$_POST['stock'],$_POST['image'],$_POST['id_category']);
-        header("Location: " . URL_EDITPRODUCTS);
+    // function UpdateProduct(){
+    //     $this->model->UpdateProduct($id,$_POST['id_product'],$_POST['description'],$_POST['price'],$_POST['stock'],$_POST['image'],$_POST['id_category']);
+    //     header("Location: " . URL_EDITPRODUCTS);
 
-    }
+    // }
   //EJERCICIO PARA QUE TE BUSQUE UN SOLO PRODUCTO POR ID  $team = $this->teamsModel->getTeam($id);
 
 }

@@ -4,7 +4,6 @@
           <table class="table table-hover table-bordered tabla">
          <thead class="thead-dark">
           <tr>
-                  <th scope="col">id_Product</th>
                   <th scope="col">Name</th>
                   <th scope="col">Description</th>
                   <th scope="col">Price</th>
@@ -18,7 +17,6 @@
         <tbody class="contenedor-tabla" >
           {foreach from=$list_Products item=products}
             <tr>
-                  <td scope="col">{$products->id_product}</td>
                   <td scope="col">{$products->name}</td>
                   <td scope="col">{$products->description}</td>
                   <td scope="col">{$products->price}</td>

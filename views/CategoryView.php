@@ -27,5 +27,22 @@ class CategoryView {
         $smarty->display('templates/editcategoria.tpl');
 
     }
+    public function DisplayFormEditCategory(){
+
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"FormEditCategory");
+        $smarty->assign('BASE_URL',BASE_URL);
+        $smarty->display('templates/formeditcategory.tpl');
+
+    }
+    public function VerFormEditCategory($category){
+
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"FormEditCategory");
+        $smarty->assign('BASE_URL',BASE_URL);
+        $smarty->assign('category',$category);
+        $smarty->display('templates/formeditcategory.tpl');
+
+    }
 }
 ?>

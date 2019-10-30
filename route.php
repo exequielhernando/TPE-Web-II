@@ -18,7 +18,7 @@ define("BASE_FORMEDITPRODUCT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["S
 define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
 define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 define("URL_SIGNUP", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/signup');
-define("URL_EDITPRODUCTS", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/editproducts');
+define("URL_PRODUCTSADM", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/productsadm');
 define("URL_EDITCATEGORIA", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/editcategoria');
 
 $controller = new ProductsController();
@@ -43,11 +43,9 @@ if($action == ''){
             $controllercate->GetEditCategoria();
         }elseif($partesURL[0] == "insertproduct") {
             $controller->InsertProduct();
-        }
-        elseif($partesURL[0] == "insertcategory") {
+        }elseif($partesURL[0] == "insertcategory") {
             $controllercate->InsertCategory();
-        }
-        elseif($partesURL[0] == "product") {
+        }elseif($partesURL[0] == "product") {
             $controller->DetailsProduct($partesURL[1]);
         }elseif($partesURL[0] == "setid_categoria") {
             $controller->SetId_categoriaProducts($partesURL[1]);
@@ -61,37 +59,32 @@ if($action == ''){
             $controller->SetImagenesProducts($partesURL[1]);
         }elseif($partesURL[0] == "BorrarOneProduct") {
             $controller->BorrarOneProduct($partesURL[1]);
-        }
-        elseif($partesURL[0] == "BorrarOneCategory") {
+        }elseif($partesURL[0] == "BorrarOneCategory") {
             $controllercate->BorrarOneCategory($partesURL[1]);
-        }
-        elseif($partesURL[0] == "EditProducts") {
+        }elseif($partesURL[0] == "EditProducts") {
             $controller->EditProducts($partesURL[1]);
-        }
-        elseif($partesURL[0] == "login") {
+        }elseif($partesURL[0] == "EditCategory") {
+            $controllercate->GetEditCategoriaId($partesURL[1]);
+        }elseif($partesURL[0] == "UpdateCategory") {
+            $controllercate->SaveEditCategory();
+        }elseif($partesURL[0] == "login") {
             $controllerUser->Login();
-
         }elseif($partesURL[0] == "signin") {
             $controllerUser->Login();
-
         }elseif($partesURL[0] == "iniciarSesion") {
             $controllerUser->IniciarSesion();
-
         }elseif($partesURL[0] == "signup") {
             $controllerSignUp->SignUp();
-
         }elseif($partesURL[0] == "registrarse") {
             $controllerUser2->registrarse();
-
         }elseif($partesURL[0] == "logout") {
             $controllerUser->Logout();
-        }
-        elseif($partesURL[0] == "FormEditProduct") {
+        }elseif($partesURL[0] == "FormEditProduct") {
             $controller->VerFormEditProduct($partesURL[1]);
-        }  
-        elseif($partesURL[0] == "UpdateProduct") {
+        }elseif($partesURL[0] == "UpdateProduct") {
             $controller->GetEditProducts();
-
+        }elseif($partesURL[0] == "productsadm"){
+            $controller->GetProductsAdmin();
         }
     }
 }

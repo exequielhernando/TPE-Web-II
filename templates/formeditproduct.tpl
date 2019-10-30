@@ -6,7 +6,7 @@
  <div class="col-4 fondoturro">
       <h2>Editar Producto</h2>
       <div>
-      <form method="POST" action="UpdateProduct">
+      <form method="post" action="UpdateProduct">
           <input type="hidden" class="form-control" id="id_product" name="id_product" value="{$product[0]->id_product}">
           <input type="input" class="form-control" id="name" name="name" value="{$product[0]->name}">
           <input type="input" class="form-control" id="price" name="description" value="{$product[0]->description}">

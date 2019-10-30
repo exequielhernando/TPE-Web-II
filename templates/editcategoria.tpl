@@ -13,11 +13,10 @@
         <tbody class="contenedor-tabla" >
           {foreach from=$list_Category item=categoria}
             <tr>
-                  <td scope="col">{$categoria->id_category}</t>
                   <td scope="col">{$categoria->name}</td>
                   <td scope="col">{$categoria->description}</td>
                   <td scope="col"> <a href="BorrarOneCategory/{$categoria->id_category}">BORRAR</td>
-                  <td scope="col"> <a href="editCategory/{$categoria->id_category}">EDITAR</td>
+                  <td scope="col"> <a href="EditCategory/{$categoria->id_category}">EDITAR</td>
             </tr>
         {/foreach}
       </tbody>

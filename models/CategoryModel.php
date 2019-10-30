@@ -12,10 +12,14 @@ class CategoryModel {
         return $Category;
     }	
     public function GetCategoriaId($id){
-        $sentencia = $this->db->prepare( "SELECT * from categoria where id = ?");
-        $sentencia->execute([$id]);
-        $Category = $sentencia->fetch(PDO::FETCH_OBJ);
+        $sentencia = $this->db->prepare( "SELECT * from categoria where id_category = ?");
+        $sentencia->execute(array($id));
+        $Category = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $Category;
+    }
+    public function SaveEditCategory($name,$description,$id_category){
+        $sentencia = $this->db->prepare( "UPDATE categoria SET name = ?, description = ? where id_category=?");
+        $sentencia->execute(array($name,$description,$id_category));
     }
     public function BorrarOneCategory($id_category){
         $sentencia = $this->db->prepare("DELETE FROM categoria WHERE id_category=?");

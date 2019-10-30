@@ -26,7 +26,7 @@ class UserController {
             $_SESSION['userId'] = $usuario->id_usuario;
             //$this-> controller->GetEditProducts();
             //$this-> controller->GetEditCategoria();
-            header("Location: " . URL_EDITPRODUCTS);
+            header("Location: " . URL_PRODUCTSADM);
         }else{
             header("Location: " . URL_LOGIN);
         }
