@@ -21,7 +21,6 @@ class ProductsController {
     public function MostrarProductss(){
         $this->view->DisplayProducts();
     }
-
     public function checkLogIn(){
         session_start();
         
@@ -36,13 +35,11 @@ class ProductsController {
         } 
         $_SESSION['LAST_ACTIVITY'] = time();
     }
-   //FUNCION PRINCIPAL ENCARGADA DE MOSTRAR LOS PRODUCTOS Y LAS CATEGORIAS DE LA BASE DE DATOS EN LA TABLA DEL TEMPLATES PRODUCTS.
     public function GetProducts(){
         $Products = $this->model->GetProducts();
         $this->view->DisplayProductsId($Products);
         
     }
-
     public function DetailsProduct($id){
         $Product = $this->model->GetProductId($id);
         $this->view->DisplayOnlyProductId($Product);
@@ -52,9 +49,7 @@ class ProductsController {
         $Products = $this->model->GetProducts();
         $Category = $this->modelcate->GetCategoria();
         $this->view->DisplayEditProductsId($Products,$Category);
-    }
-
-    
+    }    
     public function GetEditProducts(){
         $this->checkLogIn();
         $id_product = $_POST["id_product"];
@@ -69,19 +64,18 @@ class ProductsController {
         $Category = $this->modelcate->GetCategoria();
         $this->view->DisplayEditProductsId($Products,$Category); 
     }
-//----------------------INSERTA PRODUCTOS EN LA TABLA DE LA BASE DE DATOS Y LO MUESTRA EN EL SMARTY PRODUCT
-public function InsertProduct(){
-    $this->checkLogIn(); 
-    $name= $_POST['name'];
-    $description= $_POST['description'];
-    $price= $_POST['price'];
-    $stock= $_POST['stock'];
-    $image= $_POST['image'];
-    $id_category =$_POST['id_category'];
-    $this->model->InsertProduct($name,$description,$price,$stock,$image,$id_category);
-    $Products = $this->model->GetProducts();
-    $Category = $this->modelcate->GetCategoria();
-    $this->view->DisplayEditProductsId($Products,$Category);
+    public function InsertProduct(){
+        $this->checkLogIn(); 
+        $name= $_POST['name'];
+        $description= $_POST['description'];
+        $price= $_POST['price'];
+        $stock= $_POST['stock'];
+        $image= $_POST['image'];
+        $id_category =$_POST['id_category'];
+        $this->model->InsertProduct($name,$description,$price,$stock,$image,$id_category);
+        $Products = $this->model->GetProducts();
+        $Category = $this->modelcate->GetCategoria();
+        $this->view->DisplayEditProductsId($Products,$Category);
     }
     public function BorrarOneProduct($id_product){
         $this->checkLogIn();

@@ -32,25 +32,29 @@ if($action == ''){
 }else{
     if (isset($action)){
         $partesURL = explode("/", $action);
-
+        
         if($partesURL[0] == "products"){
             $controller->GetProducts();
-        }elseif($partesURL[0] == "category") {
-            $controllercate->GetCategoria();
-        }elseif($partesURL[0] == "editcategory") {
-            $controllercate->GetEditCategoria();
+        }elseif($partesURL[0] == "FormEditProduct") {
+            $controller->VerFormEditProduct($partesURL[1]);
+        }elseif($partesURL[0] == "UpdateProduct") {
+            $controller->GetEditProducts();
+        }elseif($partesURL[0] == "productsadm"){
+            $controller->GetProductsAdmin();
         }elseif($partesURL[0] == "insertproduct") {
             $controller->InsertProduct();
-        }elseif($partesURL[0] == "insertcategory") {
-            $controllercate->InsertCategory();
         }elseif($partesURL[0] == "product") {
             $controller->DetailsProduct($partesURL[1]);
         }elseif($partesURL[0] == "BorrarOneProduct") {
             $controller->BorrarOneProduct($partesURL[1]);
+        }elseif($partesURL[0] == "category") {
+            $controllercate->GetCategoria();
+        }elseif($partesURL[0] == "editcategory") {
+            $controllercate->GetEditCategoria();
+        }elseif($partesURL[0] == "insertcategory") {
+            $controllercate->InsertCategory();
         }elseif($partesURL[0] == "BorrarOneCategory") {
             $controllercate->BorrarOneCategory($partesURL[1]);
-        }elseif($partesURL[0] == "EditProducts") {
-            $controller->EditProducts($partesURL[1]);
         }elseif($partesURL[0] == "EditCategory") {
             $controllercate->GetEditCategoriaId($partesURL[1]);
         }elseif($partesURL[0] == "UpdateCategory") {
@@ -61,18 +65,12 @@ if($action == ''){
             $controllerUser->Login();
         }elseif($partesURL[0] == "iniciarSesion") {
             $controllerUser->IniciarSesion();
+        }elseif($partesURL[0] == "logout") {
+            $controllerUser->Logout();
         }elseif($partesURL[0] == "signup") {
             $controllerSignUp->SignUp();
         }elseif($partesURL[0] == "registrarse") {
-            $controllerUser2->registrarse();
-        }elseif($partesURL[0] == "logout") {
-            $controllerUser->Logout();
-        }elseif($partesURL[0] == "FormEditProduct") {
-            $controller->VerFormEditProduct($partesURL[1]);
-        }elseif($partesURL[0] == "UpdateProduct") {
-            $controller->GetEditProducts();
-        }elseif($partesURL[0] == "productsadm"){
-            $controller->GetProductsAdmin();
+            $controllerSignUp->registrarse();
         }
     }
 }

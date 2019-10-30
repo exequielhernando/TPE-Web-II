@@ -4,7 +4,6 @@ class CategoryModel {
     function __construct(){
         $this->db = new PDO('mysql:host=localhost;'.'dbname=mayoristaropa;charset=utf8', 'root', '');
     }
-	
     public function GetCategoria(){
         $sentencia = $this->db->prepare( "SELECT * from categoria");
         $sentencia->execute();

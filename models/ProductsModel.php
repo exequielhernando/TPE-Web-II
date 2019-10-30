@@ -10,7 +10,6 @@ class ProductsModel {
         $Products = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $Products;
     }		
-
     public function GetProductId($id){
         $sentencia = $this->db->prepare( "SELECT P.*, C.name as nameCat from producto P join categoria C on P.id_category = C.id_category WHERE id_product=?");
         $sentencia->execute(array($id));
@@ -21,7 +20,6 @@ class ProductsModel {
         $sentencia = $this->db->prepare("INSERT INTO producto(name,description,price,stock,image,id_category) VALUES(?,?,?,?,?,?)");
         $sentencia->execute(array($name,$description,$price,$stock,$image,$id_category));
     }
-
     public function SaveEditProduct($name,$description,$price,$stock,$image,$id_category,$id_product){
         $sentencia = $this->db->prepare( "UPDATE producto SET name = ?, description = ?, price = ?, stock = ?, image = ?, id_category = ? WHERE id_product = ? ");
         $sentencia->execute(array($name,$description,$price,$stock,$image,$id_category,$id_product));
