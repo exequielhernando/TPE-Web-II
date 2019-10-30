@@ -28,6 +28,13 @@ class ProductsModel {
         $sentencia = $this->db->prepare("DELETE FROM producto WHERE id_product=?");
         $sentencia->execute(array($id_product));
     }
+    public function GetProductsByOrderCategory(){
+        $sentencia = $this->db->prepare( "SELECT P.*, C.name as nameCat from producto P join categoria C on P.id_category = C.id_category ORDER BY `producto`.`id_category` ASC");
+        $sentencia->execute();
+        $Products = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $Products;
+    }	
+
 
 }
 ?>
