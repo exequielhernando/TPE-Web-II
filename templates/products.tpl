@@ -5,7 +5,7 @@
       <thead class="thead-dark">
           <tr>
                   <th scope="col">Name</th>
-                  <th scope="col">Category</th>
+                  <th scope="col"><a class="link-category" href="{$BASE_URL}productsbyorder" >Category</a></th>
                   <th scope="col">Details</th>
 
 
@@ -14,11 +14,9 @@
         <tbody class="contenedor-tabla nolink" >
           {foreach from=$list_Products item=products}
             <tr>
-                  <td scope="col">{$products->name}</th>
-                  <td scope="col">{$products->nameCat}</th>
-                  <td scope="col"> <a href="product/{$products->id_product}">Item</th>
-
-
+              <td scope="col">{$products->name}</th>
+              <td scope="col">{$products->nameCat}</th>
+              <td scope="col"> <a href="product/{$products->id_product}">Item</th>
             </tr>
         {/foreach}
       </tbody>

@@ -37,6 +37,8 @@ if($action == ''){
             $controller->GetProducts();
         }elseif($partesURL[0] == "FormEditProduct") {
             $controller->VerFormEditProduct($partesURL[1]);
+        }elseif($partesURL[0] == "productsbyorder") {
+            $controller->GetProductsByOrder();
         }elseif($partesURL[0] == "UpdateProduct") {
             $controller->GetEditProducts();
         }elseif($partesURL[0] == "productsadm"){

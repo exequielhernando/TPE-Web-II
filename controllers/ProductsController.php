@@ -40,6 +40,11 @@ class ProductsController {
         $this->view->DisplayProductsId($Products);
         
     }
+    public function GetProductsByOrder(){
+        $Products = $this->model->GetProductsByOrderCategory();
+        $this->view->DisplayProductsId($Products);
+        
+    }
     public function DetailsProduct($id){
         $Product = $this->model->GetProductId($id);
         $this->view->DisplayOnlyProductId($Product);

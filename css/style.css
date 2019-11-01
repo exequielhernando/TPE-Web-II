@@ -70,7 +70,9 @@ body{
 .black{
     color: black;
 }  
-
 .padd{
     padding-top: 1%;
+}
+.link-category{
+    text-decoration: none;
 }
