@@ -37,7 +37,8 @@ class ProductsController {
     }
     public function GetProducts(){
         $Products = $this->model->GetProducts();
-        $this->view->DisplayProductsId($Products);
+        $Category = $this->modelcate->GetCategoria();
+        $this->view->DisplayProductsId($Products,$Category);
         
     }
     public function DetailsProduct($id){
@@ -92,6 +93,11 @@ class ProductsController {
         $this->view->VerFormEditProduct($product,$category);
     }
 
+    public function OrderPorCategory(){
+        $id_category = $_POST['id_category']; 
+        $Products = $this->model->GetProductsPorCategory($id_category);
+        $this->view->OrderPorCategory($Products);
+    }
 }
 
 ?>

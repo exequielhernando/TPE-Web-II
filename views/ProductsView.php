@@ -9,12 +9,13 @@ class ProductsView {
 
     }
 
-    public function DisplayProductsId($Products){
+    public function DisplayProductsId($Products,$Category){
 
         $smarty = new Smarty();
         $smarty->assign('titulo',"Products");
         $smarty->assign('BASE_URL',BASE_URL);
         $smarty->assign('list_Products',$Products);
+        $smarty->assign('list_Category',$Category);
         $smarty->display('templates/products.tpl');
 
     }
@@ -53,6 +54,14 @@ class ProductsView {
         $smarty->assign('BASE_URL',BASE_URL);
         $smarty->assign('product',$Product);
         $smarty->display('templates/product.tpl');
+
+    }
+    public function OrderPorCategory($products){
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"FiltrarPorCategory");
+        $smarty->assign('BASE_URL',BASE_URL);
+        $smarty->assign('list_Products',$products);
+        $smarty->display('templates/OrderPorCategory.tpl');
 
     }
 }

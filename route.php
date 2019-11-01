@@ -20,6 +20,7 @@ define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT
 define("URL_SIGNUP", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/signup');
 define("URL_PRODUCTSADM", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/productsadm');
 define("URL_EDITCATEGORIA", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/editcategoria');
+define("URL_ORDERPORCATEGORY", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/orderporcategory');
 
 $controller = new ProductsController();
 $controllercate = new CategoryController();
@@ -59,6 +60,10 @@ if($action == ''){
             $controllercate->GetEditCategoriaId($partesURL[1]);
         }elseif($partesURL[0] == "UpdateCategory") {
             $controllercate->SaveEditCategory();
+
+        }elseif($partesURL[0] == "OrderPorCategory") {
+            $controller->OrderPorCategory();
+
         }elseif($partesURL[0] == "login") {
             $controllerUser->Login();
         }elseif($partesURL[0] == "signin") {

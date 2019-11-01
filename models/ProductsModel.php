@@ -29,5 +29,11 @@ class ProductsModel {
         $sentencia->execute(array($id_product));
     }
 
+    public function GetProductsPorCategory($id_category){
+        $sentencia = $this->db->prepare( "SELECT P.*, C.name as nameCat from producto P join categoria C on P.id_category = C.id_category ORDER by id_category=?");
+        $sentencia->execute(array($id_category));
+        $Products = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $Products;
+    }	
 }
 ?>
