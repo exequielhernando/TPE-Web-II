@@ -5,17 +5,17 @@ require_once('libs/Smarty.class.php');
 
 class ProductsView {
     
+    
     function __construct(){
 
     }
 
-    public function DisplayProductsId($Products,$Category){
+    public function DisplayProductsId($Products){
 
         $smarty = new Smarty();
         $smarty->assign('titulo',"Products");
         $smarty->assign('BASE_URL',BASE_URL);
         $smarty->assign('list_Products',$Products);
-        $smarty->assign('list_Category',$Category);
         $smarty->display('templates/products.tpl');
 
     }
@@ -56,12 +56,13 @@ class ProductsView {
         $smarty->display('templates/product.tpl');
 
     }
-    public function OrderPorCategory($products){
+
+    public function DisplayProductCsr(){
+
         $smarty = new Smarty();
-        $smarty->assign('titulo',"FiltrarPorCategory");
+        $smarty->assign('titulo',"productcsr");
         $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->assign('list_Products',$products);
-        $smarty->display('templates/OrderPorCategory.tpl');
+        $smarty->display('templates/productcsr.tpl');
 
     }
 }

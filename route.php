@@ -13,57 +13,53 @@ $action = $_GET["action"];
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 define("URL_PRODUCTS", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/products');
 define("URL_CATEGORY", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/Ca');
-
 define("BASE_FORMEDITPRODUCT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/formeditproduct');
 define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
 define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 define("URL_SIGNUP", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/signup');
 define("URL_PRODUCTSADM", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/productsadm');
 define("URL_EDITCATEGORIA", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/editcategoria');
-define("URL_ORDERPORCATEGORY", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/orderporcategory');
 
-$controller = new ProductsController();
-$controllercate = new CategoryController();
+$controllerProduct = new ProductsController();
+$controllerCategory = new CategoryController();
 $controllerUser = new UserController();
 $controllerSignUp = new SignUpController();
 
 
 if($action == ''){
-    $controller->GetProducts();
+    $controllerProduct->GetProducts();
 }else{
     if (isset($action)){
         $partesURL = explode("/", $action);
         
         if($partesURL[0] == "products"){
-            $controller->GetProducts();
+            $controllerProduct->GetProducts();
         }elseif($partesURL[0] == "FormEditProduct") {
-            $controller->VerFormEditProduct($partesURL[1]);
+            $controllerProduct->VerFormEditProduct($partesURL[1]);
+        }elseif($partesURL[0] == "productsbyorder") {
+            $controllerProduct->GetProductsByOrder();
         }elseif($partesURL[0] == "UpdateProduct") {
-            $controller->GetEditProducts();
+            $controllerProduct->GetEditProducts();
         }elseif($partesURL[0] == "productsadm"){
-            $controller->GetProductsAdmin();
+            $controllerProduct->GetProductsAdmin();
         }elseif($partesURL[0] == "insertproduct") {
-            $controller->InsertProduct();
+            $controllerProduct->InsertProduct();
         }elseif($partesURL[0] == "product") {
-            $controller->DetailsProduct($partesURL[1]);
+            $controllerProduct->DetailsProduct($partesURL[1]);
         }elseif($partesURL[0] == "BorrarOneProduct") {
-            $controller->BorrarOneProduct($partesURL[1]);
+            $controllerProduct->BorrarOneProduct($partesURL[1]);
         }elseif($partesURL[0] == "category") {
-            $controllercate->GetCategoria();
+            $controllerCategory->GetCategoria();
         }elseif($partesURL[0] == "editcategory") {
-            $controllercate->GetEditCategoria();
+            $controllerCategory->GetEditCategoria();
         }elseif($partesURL[0] == "insertcategory") {
-            $controllercate->InsertCategory();
+            $controllerCategory->InsertCategory();
         }elseif($partesURL[0] == "BorrarOneCategory") {
-            $controllercate->BorrarOneCategory($partesURL[1]);
+            $controllerCategory->BorrarOneCategory($partesURL[1]);
         }elseif($partesURL[0] == "EditCategory") {
-            $controllercate->GetEditCategoriaId($partesURL[1]);
+            $controllerCategory->GetEditCategoriaId($partesURL[1]);
         }elseif($partesURL[0] == "UpdateCategory") {
-            $controllercate->SaveEditCategory();
-
-        }elseif($partesURL[0] == "OrderPorCategory") {
-            $controller->OrderPorCategory();
-
+            $controllerCategory->SaveEditCategory();
         }elseif($partesURL[0] == "login") {
             $controllerUser->Login();
         }elseif($partesURL[0] == "signin") {
@@ -76,6 +72,9 @@ if($action == ''){
             $controllerSignUp->SignUp();
         }elseif($partesURL[0] == "registrarse") {
             $controllerSignUp->registrarse();
+        }
+        elseif($partesURL[0] == "ProductCsr") {
+            $controllerProduct->ProductCsr();
         }
     }
 }

@@ -37,8 +37,12 @@ class ProductsController {
     }
     public function GetProducts(){
         $Products = $this->model->GetProducts();
-        $Category = $this->modelcate->GetCategoria();
-        $this->view->DisplayProductsId($Products,$Category);
+        $this->view->DisplayProductsId($Products);
+        
+    }
+    public function GetProductsByOrder(){
+        $Products = $this->model->GetProductsByOrderCategory();
+        $this->view->DisplayProductsId($Products);
         
     }
     public function DetailsProduct($id){
@@ -93,11 +97,13 @@ class ProductsController {
         $this->view->VerFormEditProduct($product,$category);
     }
 
-    public function OrderPorCategory(){
-        $id_category = $_POST['id_category']; 
-        $Products = $this->model->GetProductsPorCategory($id_category);
-        $this->view->OrderPorCategory($Products);
-    }
-}
 
+    public function ProductCsr(){
+        $this->checkLogIn();
+        $this->view->DisplayProductCsr();
+
+
+    }
+
+}
 ?>
