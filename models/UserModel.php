@@ -16,7 +16,13 @@ class UserModel {
     public function InsertarUsuario($usuario,$pass,$email,$name,$lastname){
         $sentencia = $this->db->prepare("INSERT INTO usuario(usuario,pass,email,name,lastname) VALUES(?,?,?,?,?)");
         $sentencia->execute(array($usuario,$pass,$email,$name,$lastname));
-        }
+    }
+    public function GetUsers(){
+        $sentencia = $this->db->prepare("SELECT * FROM usuario");
+        $sentencia->execute();
+        $users = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $users;
+    }
  }
 
 ?>

@@ -5,7 +5,7 @@
                                 <ul class="nav navbar-nav ml-auto">
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="{$BASE_URL}productsadm" ;"><i class="fa fa-user-circle-o"></i> Products</a></li>
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="{$BASE_URL}editcategory" ;"><i class="fa fa-user-circle-o"></i> Category</a></li>
-
+                                        <li class="nav-item" role="presentation"><a class="nav-link active" href="{$BASE_URL}users"><i class="fa fa-sign-in"></i>Users</a></li>
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="{$BASE_URL}logout"><i class="fa fa-sign-in"></i> Logout</a></li>
                                 </ul>
                         </div>

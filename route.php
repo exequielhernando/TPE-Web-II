@@ -67,6 +67,8 @@ if($action == ''){
             $controllerUser->Login();
         }elseif($partesURL[0] == "iniciarSesion") {
             $controllerUser->IniciarSesion();
+        }elseif($partesURL[0] == "users") {
+            $controllerUser->ShowUsers();
         }elseif($partesURL[0] == "logout") {
             $controllerUser->Logout();
         }elseif($partesURL[0] == "signup") {

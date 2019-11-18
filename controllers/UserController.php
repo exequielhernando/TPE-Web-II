@@ -24,10 +24,19 @@ class UserController {
             session_start();
             $_SESSION['user'] = $usuario->usuario;
             $_SESSION['userId'] = $usuario->id_usuario;
-            header("Location: " . URL_PRODUCTSADM);
+            if ($usuario->is_admin==1) {
+                header("Location: " . URL_PRODUCTSADM);
+            }
+            else {
+                header("Location: " . BASE_URL);
+            }
         }else{
             header("Location: " . URL_LOGIN);
         }
+    }
+    public function ShowUsers(){
+        $Users = $this->model->GetUsers();
+        $this->view->ShowUsers($Users);
     }
     public function login(){
         $this->view->DisplayLogin();
@@ -37,4 +46,5 @@ class UserController {
         session_destroy();
         header("Location: " . URL_LOGIN);
     }
+
 }
