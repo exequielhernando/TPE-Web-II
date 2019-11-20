@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-19 22:57:22
+/* Smarty version 3.1.33, created on 2019-11-20 22:45:27
   from 'D:\xampp\htdocs\htdocs\TPE-Web-II\templates\products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dd46542b33763_00681285',
+  'unifunc' => 'content_5dd5b3f7952398_51793747',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ed847fb2bf950130d9ec9cc06cbdd9d2c2a419f' => 
     array (
       0 => 'D:\\xampp\\htdocs\\htdocs\\TPE-Web-II\\templates\\products.tpl',
-      1 => 1574198883,
+      1 => 1574286325,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dd46542b33763_00681285 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd5b3f7952398_51793747 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -47,11 +47,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['products']->value) {
 ?>
             <tr>
               <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->name;?>
-</th>
+</td>
               <td scope="col"><?php echo $_smarty_tpl->tpl_vars['products']->value->nameCat;?>
-</th>
+</td>
               <td scope="col"> <a href="product/<?php echo $_smarty_tpl->tpl_vars['products']->value->id_product;?>
-">Item</th>
+">Item</td>
             </tr>
         <?php
 }

@@ -97,7 +97,7 @@ class ProductsController {
         $this->view->VerFormEditProduct($product,$category);
     }
     public function GetProductsCSR(){
-        $this->checkLogIn();
+        // $this->checkLogIn();
         $this->view->DisplayProductsCSR();
     }
     public function GetProductCSR($id_product){

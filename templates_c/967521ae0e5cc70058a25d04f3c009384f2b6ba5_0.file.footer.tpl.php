@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-30 02:15:17
+/* Smarty version 3.1.33, created on 2019-11-20 22:40:32
   from 'D:\xampp\htdocs\htdocs\TPE-Web-II\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db8e425d2c199_70764068',
+  'unifunc' => 'content_5dd5b2d00e6f97_85722071',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '967521ae0e5cc70058a25d04f3c009384f2b6ba5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\htdocs\\TPE-Web-II\\templates\\footer.tpl',
-      1 => 1572376925,
+      1 => 1574286030,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db8e425d2c199_70764068 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd5b2d00e6f97_85722071 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <footer>
                         <div class="row gradient black padd">
                             <div class="col-sm-6 col-md-4 footer-navigation">
@@ -47,6 +47,9 @@ function content_5db8e425d2c199_70764068 (Smarty_Internal_Template $_smarty_tpl)
         </footer>
         </div>
 </div>
+        <?php echo '<script'; ?>
+ src="js/products.js"><?php echo '</script'; ?>
+>
         <?php echo '<script'; ?>
  src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><?php echo '</script'; ?>
 >

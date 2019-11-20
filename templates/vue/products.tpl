@@ -7,7 +7,7 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Name</th>
-                <th scope="col"><a class="link-category" href="{$BASE_URL}productsbyorder" >Category</a></th>
+                <th scope="col">Category</th>
                 <th scope="col">Details</th>
             </tr> 
         </thead>
@@ -15,7 +15,7 @@
             <tr v-for="product in products">
               <td scope="col">{{product.name}}</th>
               <td scope="col">{{product.nameCat}}</th>
-              <td scope="col"><a data-id="{{product.id}}">Item</a></td>
+              <td scope="col"> <a href="product/{{product[id_product]}}">Item</td>
             </tr>
       </tbody>
     </table>

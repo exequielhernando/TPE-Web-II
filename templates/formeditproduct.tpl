@@ -26,7 +26,7 @@
       </div>
     </div>
     </div>
-<div class="col-4">
+  <div class="col-4">
   </div>
 </div>
 {include file="footer.tpl"} 

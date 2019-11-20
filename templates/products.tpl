@@ -14,9 +14,9 @@
         <tbody class="contenedor-tabla nolink" >
           {foreach from=$list_Products item=products}
             <tr>
-              <td scope="col">{$products->name}</th>
-              <td scope="col">{$products->nameCat}</th>
-              <td scope="col"> <a href="product/{$products->id_product}">Item</th>
+              <td scope="col">{$products->name}</td>
+              <td scope="col">{$products->nameCat}</td>
+              <td scope="col"> <a href="product/{$products->id_product}">Item</td>
             </tr>
         {/foreach}
       </tbody>

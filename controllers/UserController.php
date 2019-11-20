@@ -38,6 +38,21 @@ class UserController {
         $Users = $this->model->GetUsers();
         $this->view->ShowUsers($Users);
     }
+    public function DeleteUser($id_user){
+        $this->model->DeleteUser($id_user);
+        header("Location: " . BASE_URL . "/users");
+
+    }
+    public function EditUser($id_user){
+        $User = $this->model->GetUser($id_user);
+        $this->view->ShowEditUser($User);
+    }
+    public function SaveEditUser(){
+        $id_user = $_POST["id_usuario"];
+        $is_admin = $_POST["is_admin"];
+        $this->model->SaveEditUser($is_admin, $id_user);
+        header("Location: " . BASE_URL . "/users");
+    }
     public function login(){
         $this->view->DisplayLogin();
     }

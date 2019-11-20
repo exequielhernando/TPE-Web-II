@@ -23,6 +23,20 @@ class UserModel {
         $users = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $users;
     }
+    public function GetUser($id_user){
+        $sentencia = $this->db->prepare("SELECT * FROM usuario where id_usuario = ?");
+        $sentencia->execute(array($id_user));
+        $user = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $user;
+    }
+    public function DeleteUser($id_user){
+        $sentencia = $this->db->prepare("DELETE FROM usuario WHERE id_usuario=?");
+        $sentencia->execute(array($id_user));
+    }
+    public function SaveEditUser($is_admin, $id_user){
+        $sentencia = $this->db->prepare( "UPDATE usuario SET is_admin = ? where id_usuario=?");
+        $sentencia->execute(array($is_admin,$id_user));
+    }
  }
 
 ?>

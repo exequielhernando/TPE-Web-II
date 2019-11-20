@@ -73,6 +73,12 @@ if($action == ''){
             $controllerUser->IniciarSesion();
         }elseif($partesURL[0] == "users") {
             $controllerUser->ShowUsers();
+        }elseif($partesURL[0] == "deleteUser") {
+            $controllerUser->DeleteUser($partesURL[1]);
+        }elseif($partesURL[0] == "editUser") {
+            $controllerUser->EditUser($partesURL[1]);
+        }elseif($partesURL[0] == "UpdateUser") {
+            $controllerUser->SaveEditUser();
         }elseif($partesURL[0] == "logout") {
             $controllerUser->Logout();
         }elseif($partesURL[0] == "signup") {

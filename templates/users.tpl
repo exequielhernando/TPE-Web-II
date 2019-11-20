@@ -7,7 +7,7 @@
                   <th scope="col">lastname</th>
                   <th scope="col">usuario</th>
                   <th scope="col">email</th>
-                  <th scope="col">is_admin</th>
+                  <th scope="col">Administrator</th>
                   <th scope="col"> </th>
                   <th scope="col"> </th>
             </tr>
@@ -22,13 +22,13 @@
                   <td scope="col">{$User->email}</td>
                   <td scope="col">
                     {if $User->is_admin==1}
-                        Administrator
+                        Yes
                     {else}
-                        Registered
+                        No
                     {/if}
                   </td>
-                  {* <td scope="col"> <a href="BorrarOneProduct/{$products->id_product}">BORRAR</td>
-                  <td scope="col"> <a href="FormEditProduct/{$products->id_product}">EDITAR</td> *}
+                  <td scope="col"> <a href="deleteUser/{$User->id_usuario}">BORRAR</td>
+                  <td scope="col"> <a href="editUser/{$User->id_usuario}">EDITAR</td> 
             </tr>
           {/foreach}
       </tbody>
