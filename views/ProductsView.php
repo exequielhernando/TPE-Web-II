@@ -4,63 +4,57 @@ require_once('libs/Smarty.class.php');
 
 
 class ProductsView {
-    
+    private $Smarty;
     function __construct(){
-
+        $this->Smarty = new Smarty();
     }
 
     public function DisplayProductsId($Products){
 
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"Products");
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->assign('list_Products',$Products);
-        $smarty->display('templates/products.tpl');
+        $this->Smarty->assign('titulo',"Products");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('list_Products',$Products);
+        $this->Smarty->display('templates/products.tpl');
 
     }
     public function DisplayProductsCSR(){
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"Lista de Productos CSR");
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->display('templates/showproductscsr.tpl');
+        $this->Smarty->assign('titulo',"Lista de Productos CSR");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->display('templates/showproductscsr.tpl');
     }
 
 
     public function DisplayEditProductsId($Products,$Category){
 
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"EditProducts");
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->assign('list_Products',$Products);
-        $smarty->assign('list_Category',$Category);
-        $smarty->display('templates/editproducts.tpl');
+        $this->Smarty->assign('titulo',"EditProducts");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('list_Products',$Products);
+        $this->Smarty->assign('list_Category',$Category);
+        $this->Smarty->display('templates/editproducts.tpl');
 
     }
     public function DisplayFormEditProduct($Products,$Category){
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"FormEditProducts");
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->assign('list_Products',$Products);
-        $smarty->assign('list_Category',$Category);
-        $smarty->display('templates/formeditproduct.tpl');
+        $this->Smarty->assign('titulo',"FormEditProducts");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('list_Products',$Products);
+        $this->Smarty->assign('list_Category',$Category);
+        $this->Smarty->display('templates/formeditproduct.tpl');
 
     }
     public function VerFormEditProduct($product,$category){
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"FormEditProducts");
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->assign('product',$product);
-        $smarty->assign('category',$category);
-        $smarty->display('templates/formeditproduct.tpl');
+        $this->Smarty->assign('titulo',"FormEditProducts");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('product',$product);
+        $this->Smarty->assign('category',$category);
+        $this->Smarty->display('templates/formeditproduct.tpl');
 
     }
     public function DisplayOnlyProductId($Product){
 
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"product");
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->assign('product',$Product);
-        $smarty->display('templates/product.tpl');
+        $this->Smarty->assign('titulo',"product");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('product',$Product);
+        $this->Smarty->display('templates/product.tpl');
 
     }
 }

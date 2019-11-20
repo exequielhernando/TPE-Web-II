@@ -4,31 +4,30 @@ require_once('libs/Smarty.class.php');
 
 
 class UserView {
-
+    private $Smarty;
     function __construct(){
-
+        $this->Smarty = new Smarty();
     }
 
     public function DisplayLogin(){
 
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"Login");
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->display('templates/login.tpl');
+        $this->Smarty->assign('titulo',"Login");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->display('templates/login.tpl');
     }
     public function ShowUsers($Users){
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"Users");
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->assign('Users',$Users);
-        $smarty->display('templates/users.tpl');
+        
+        $this->Smarty->assign('titulo',"Users");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('Users',$Users);
+        $this->Smarty->display('templates/users.tpl');
     }
     public function ShowEditUser($User){
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"FormEditUser");
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->assign('User',$User);
-        $smarty->display('templates/formedituser.tpl');
+       
+        $this->Smarty->assign('titulo',"FormEditUser");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('User',$User);
+        $this->Smarty->display('templates/formedituser.tpl');
     }
 }
 ?>
