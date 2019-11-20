@@ -35,6 +35,8 @@ if($action == ''){
         
         if($partesURL[0] == "products"){
             $controller->GetProducts();
+        }elseif($partesURL[0] == "products-csr") {
+            $controller->GetProductsCSR();
         }elseif($partesURL[0] == "FormEditProduct") {
             $controller->VerFormEditProduct($partesURL[1]);
         }elseif($partesURL[0] == "productsbyorder") {
@@ -47,6 +49,8 @@ if($action == ''){
             $controller->InsertProduct();
         }elseif($partesURL[0] == "product") {
             $controller->DetailsProduct($partesURL[1]);
+        }elseif($partesURL[0] == "product-csr") {
+            $controller->GetProductCSR($partesURL[1]);
         }elseif($partesURL[0] == "BorrarOneProduct") {
             $controller->BorrarOneProduct($partesURL[1]);
         }elseif($partesURL[0] == "category") {

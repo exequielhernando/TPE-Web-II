@@ -18,6 +18,14 @@ class ProductsView {
         $smarty->display('templates/products.tpl');
 
     }
+    public function DisplayProductsCSR(){
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"Lista de Productos CSR");
+        $smarty->assign('BASE_URL',BASE_URL);
+        $smarty->display('templates/showproductscsr.tpl');
+    }
+
+
     public function DisplayEditProductsId($Products,$Category){
 
         $smarty = new Smarty();

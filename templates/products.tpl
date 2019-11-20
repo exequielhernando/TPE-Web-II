@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 {include file="nav.tpl"}
 
-          <table class="table table-hover table-bordered tabla">
+    <table class="table table-hover table-bordered tabla">
       <thead class="thead-dark">
           <tr>
                   <th scope="col">Name</th>

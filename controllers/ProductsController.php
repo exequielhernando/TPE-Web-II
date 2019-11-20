@@ -96,6 +96,14 @@ class ProductsController {
         $category = $this->modelcate->GetCategoria();
         $this->view->VerFormEditProduct($product,$category);
     }
+    public function GetProductsCSR(){
+        $this->checkLogIn();
+        $this->view->DisplayProductsCSR();
+    }
+    public function GetProductCSR($id_product){
+        $this->checkLogIn();
+        $this->view->DisplayProductCSR($id_product);
+    }
 
 }
 

@@ -5,6 +5,7 @@
                                 <ul class="nav navbar-nav ml-auto">
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="{$BASE_URL}products" ><i class="fa fa-user-circle-o"></i> Products</a></li>
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="{$BASE_URL}category" ><i class="fa fa-user-circle-o"></i> Category</a></li>
+                                        <li class="nav-item" role="presentation"><a class="nav-link active" href="{$BASE_URL}products-csr" ><i class="fa fa-user-circle-o"></i> Products api</a></li>
 
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="{$BASE_URL}signup" ><i class="fa fa-star-o"></i> Sign Up</a></li>
                                         <li class="nav-item" role="presentation"><a class="nav-link active" href="{$BASE_URL}signin"><i class="fa fa-sign-in"></i> Sign In</a></li>
