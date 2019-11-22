@@ -85,6 +85,8 @@ if($action == ''){
             $controllerSignUp->SignUp();
         }elseif($partesURL[0] == "registrarse") {
             $controllerSignUp->registrarse();
+        }elseif($partesURL[0] == "resetPassword") {
+            $controllerSignUp->ResetPassword();
         }
     }
 }

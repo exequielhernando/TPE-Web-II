@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-30 02:15:23
+/* Smarty version 3.1.33, created on 2019-11-22 00:18:39
   from 'D:\xampp\htdocs\htdocs\TPE-Web-II\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db8e42bb8c6b4_53184081',
+  'unifunc' => 'content_5dd71b4f382cd3_34675063',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '279dfae36d6100bb62ac5a3800feeb2db7c5a384' => 
     array (
       0 => 'D:\\xampp\\htdocs\\htdocs\\TPE-Web-II\\templates\\login.tpl',
-      1 => 1572376925,
+      1 => 1574376134,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db8e42bb8c6b4_53184081 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd71b4f382cd3_34675063 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>  
@@ -40,6 +40,7 @@ $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smart
             </div>
             <button type="submit" class="btn btn-primary btn-block colorbotonsubmit formpost" value="Login">Login</button>
         </form>
+        <a href="reset-password.php">Forgot my password?</a>
         </div>
         <div class="col-4"> 
         </div>
