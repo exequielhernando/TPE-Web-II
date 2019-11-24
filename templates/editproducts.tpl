@@ -1,6 +1,7 @@
 {include file="header.tpl"}
-{include file="navadm.tpl"} 
-
+{include file="navadm.tpl"}
+         
+          
           <table class="table table-hover table-bordered tabla">
          <thead class="thead-dark">
           <tr>

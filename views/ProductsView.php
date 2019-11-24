@@ -24,12 +24,13 @@ class ProductsView {
     }
 
 
-    public function DisplayEditProductsId($Products,$Category){
+    public function DisplayEditProductsId($Products,$Category,$User){
 
         $this->Smarty->assign('titulo',"EditProducts");
         $this->Smarty->assign('BASE_URL',BASE_URL);
         $this->Smarty->assign('list_Products',$Products);
         $this->Smarty->assign('list_Category',$Category);
+        $this->Smarty->assign('User',$User);
         $this->Smarty->display('templates/editproducts.tpl');
 
     }
@@ -41,11 +42,12 @@ class ProductsView {
         $this->Smarty->display('templates/formeditproduct.tpl');
 
     }
-    public function VerFormEditProduct($product,$category){
+    public function VerFormEditProduct($product,$category,$User){
         $this->Smarty->assign('titulo',"FormEditProducts");
         $this->Smarty->assign('BASE_URL',BASE_URL);
         $this->Smarty->assign('product',$product);
         $this->Smarty->assign('category',$category);
+        $this->Smarty->assign('User',$User);
         $this->Smarty->display('templates/formeditproduct.tpl');
 
     }

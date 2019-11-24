@@ -24,7 +24,7 @@ class SignUpController {
 
         $hash = password_hash($pass, PASSWORD_DEFAULT);
         $this->model->InsertarUsuario($usuario,$hash,$email,$name,$lastname);
-        $this->view2->DisplayLogin();
+        header("Location: " . BASE_URL);        
     }
 }
 ?>

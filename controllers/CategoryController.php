@@ -10,13 +10,15 @@ class CategoryController {
     private $view;
     private $controller;
     private $controlleruser;
+    private $userModel;
 
 	function __construct(){
         
         $this->model = new CategoryModel();
         $this->view = new CategoryView();
         $this->controller = new ProductsController();
-        $this->controlleruser = new UserController();   
+        $this->controlleruser = new UserController();
+        $this->userModel = new UserModel;  
     }
     public function MostrarCategoria(){
         $this->view->DisplayCategoria();
@@ -27,8 +29,10 @@ class CategoryController {
     }
     public function GetEditCategoria(){
         $this->controller->checkLogIn();
+        $user_id = $_SESSION['userId'];
+        $User = $this->userModel->GetUser($user_id);
         $Category = $this->model->GetCategoria();
-        $this->view->DisplayEditCategoriaId($Category);  
+        $this->view->DisplayEditCategoriaId($Category, $User);  
     }
     public function GetEditCategoriaId($id_category){
         $this->controller->checkLogIn();

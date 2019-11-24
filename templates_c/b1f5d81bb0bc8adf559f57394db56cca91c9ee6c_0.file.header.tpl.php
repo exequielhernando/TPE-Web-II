@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-19 22:21:40
+/* Smarty version 3.1.33, created on 2019-11-23 19:10:10
   from 'D:\xampp\htdocs\htdocs\TPE-Web-II\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dd45ce4224958_68707835',
+  'unifunc' => 'content_5dd976023e0545_07782499',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b1f5d81bb0bc8adf559f57394db56cca91c9ee6c' => 
     array (
       0 => 'D:\\xampp\\htdocs\\htdocs\\TPE-Web-II\\templates\\header.tpl',
-      1 => 1574196384,
+      1 => 1574532608,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dd45ce4224958_68707835 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd976023e0545_07782499 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
             <html lang="en">
             <head>
@@ -37,9 +37,10 @@ function content_5dd45ce4224958_68707835 (Smarty_Internal_Template $_smarty_tpl)
 
                 <title><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </title>
-                <link rel="stylesheet" href="css/style.css">
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
                 <link rel="stylesheet" href="css/bootstrap.min.css">
+                <link rel="stylesheet" href="css/style.css">
+
             </head>
             <body>            <?php }
 }

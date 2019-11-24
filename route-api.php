@@ -1,7 +1,6 @@
 <?php
 require_once("Router.php");
-require_once("./api/controllers/ProductsApiController.php");
-require_once("./api/controllers/CategoriesApiController.php");
+require_once("./api/controllers/CommentsApiController.php");
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 
@@ -15,13 +14,13 @@ $method = $_SERVER["REQUEST_METHOD"];
 $router = new Router();
 
 // arma la tabla de ruteo
-$router->addRoute("products", "GET", "ProductsApiController", "GetProducts");
-$router->addRoute("products/:ID", "GET", "ProductsApiController", "GetProduct");
-$router->addRoute("products/:ID", "DELETE", "ProductsApiController", "DeleteProduct");
-$router->addRoute("products", "POST", "ProductsApiController", "AddProduct");
-$router->addRoute("products/:ID", "PUT", "ProductsApiController", "UpdateProduct");
 
-$router->addRoute("categories", "GET", "CategoriesApiController", "GetCategories");
+$router->addRoute("comments", "GET", "CommentsApiController", "GetComments");
+$router->addRoute("comments/:ID", "GET", "CommentsApiController", "GetComment");
+$router->addRoute("comments/:ID", "DELETE", "CommentsApiController", "DeleteComment");
+$router->addRoute("comments", "POST", "CommentsApiController", "AddComment");
+$router->addRoute("comments/:ID", "PUT", "CommentsApiController", "UpdateComment");
+
 
 
 // rutea

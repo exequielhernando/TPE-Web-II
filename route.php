@@ -19,6 +19,8 @@ define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"
 define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 define("URL_SIGNUP", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/signup');
 define("URL_PRODUCTSADM", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/productsadm');
+define("URL_PRODUCTLOG", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/productslog');
+
 define("URL_EDITCATEGORIA", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/editcategoria');
 
 $controller = new ProductsController();
@@ -35,8 +37,6 @@ if($action == ''){
         
         if($partesURL[0] == "products"){
             $controller->GetProducts();
-        }elseif($partesURL[0] == "products-csr") {
-            $controller->GetProductsCSR();
         }elseif($partesURL[0] == "FormEditProduct") {
             $controller->VerFormEditProduct($partesURL[1]);
         }elseif($partesURL[0] == "productsbyorder") {
@@ -45,12 +45,12 @@ if($action == ''){
             $controller->GetEditProducts();
         }elseif($partesURL[0] == "productsadm"){
             $controller->GetProductsAdmin();
+        }elseif($partesURL[0] == "productslog"){
+            $controller->GetProductsLog();
         }elseif($partesURL[0] == "insertproduct") {
             $controller->InsertProduct();
         }elseif($partesURL[0] == "product") {
             $controller->DetailsProduct($partesURL[1]);
-        }elseif($partesURL[0] == "product-csr") {
-            $controller->GetProductCSR($partesURL[1]);
         }elseif($partesURL[0] == "BorrarOneProduct") {
             $controller->BorrarOneProduct($partesURL[1]);
         }elseif($partesURL[0] == "category") {

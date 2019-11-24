@@ -7,18 +7,18 @@
       <h2>Editar Usuario</h2>
       <div>
       <form method="post" action="UpdateUser">
-          <input type="hidden" class="form-control" id="id_usuario" name="id_usuario" value="{$User[0]->id_usuario}">
-          <input type="input" class="form-control" id="name" name="name" disabled value="{$User[0]->name}">
-          <input type="input" class="form-control" id="lastname" name="lastname" disabled value="{$User[0]->lastname}">
-          <input type="input" class="form-control" id="usuario" name="usuario" disabled value="{$User[0]->usuario}">
-          <input type="input" class="form-control" id="email" name="email" disabled value="{$User[0]->email}">
+          <input type="hidden" class="form-control" id="id_usuario" name="id_usuario" value="{$UserEdit[0]->id_usuario}">
+          <input type="input" class="form-control" id="name" name="name" disabled value="{$UserEdit[0]->name}">
+          <input type="input" class="form-control" id="lastname" name="lastname" disabled value="{$UserEdit[0]->lastname}">
+          <input type="input" class="form-control" id="usuario" name="usuario" disabled value="{$UserEdit[0]->usuario}">
+          <input type="input" class="form-control" id="email" name="email" disabled value="{$UserEdit[0]->email}">
           <div class="select">
             <select id="is_admin" name ="is_admin" class="browser-default custom-select">
-                {if $User[0]->is_admin == 0}
+                {if $UserEdit[0]->is_admin == 0}
                     <option value="0" selected>Registered User</option>
                     <option value="1">Administator User</option>
                 {/if}
-                {if $User[0]->is_admin == 1}
+                {if $UserEdit[0]->is_admin == 1}
                     <option value="0">Registered User</option>
                     <option value="1" selected>Administator User</option>
                 {/if}        

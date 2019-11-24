@@ -10,8 +10,9 @@
 
 
                 <title>{$titulo}</title>
-                <link rel="stylesheet" href="css/style.css">
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
                 <link rel="stylesheet" href="css/bootstrap.min.css">
+                <link rel="stylesheet" href="css/style.css">
+
             </head>
             <body>            
