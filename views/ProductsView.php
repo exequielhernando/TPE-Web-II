@@ -47,22 +47,23 @@ class ProductsView {
         $smarty->display('templates/formeditproduct.tpl');
 
     }
-    public function DisplayOnlyProductId($Product){
+    public function MostrarImages($Product,$Images){
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"MostrarImagesDeProduct");
+        $smarty->assign('BASE_URL',BASE_URL);
+        $smarty->assign('product',$Product);
+        $smarty->assign('Images',$Images);
+        $smarty->display('templates/Product.tpl');
 
+    }
+    public function DisplayOnlyProductId($Product,$Images){
+       // $this->smarty->assign('Context', explode("/", $_GET["action"]));
         $smarty = new Smarty();
         $smarty->assign('titulo',"product");
         $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->assign('product',$Product);
+        $smarty->assign('Product',$Product);
+        $smarty->assign('Images', $Images);
         $smarty->display('templates/product.tpl');
-
-    }
-
-    public function DisplayProductCsr(){
-
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"productcsr");
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->display('templates/productcsr.tpl');
 
     }
 }

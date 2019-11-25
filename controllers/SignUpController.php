@@ -13,6 +13,8 @@ class SignUpController {
         $this->view2 = new UserView();
     }
     public function SignUp(){
+        session_start();
+        session_destroy();
         $this->view->DisplaySignUp();
     }
     public function registrarse(){

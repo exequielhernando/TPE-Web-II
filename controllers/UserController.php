@@ -30,6 +30,8 @@ class UserController {
         }
     }
     public function login(){
+        session_start();
+        session_destroy();
         $this->view->DisplayLogin();
     }
     public function logout(){

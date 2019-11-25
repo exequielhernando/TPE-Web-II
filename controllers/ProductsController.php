@@ -2,6 +2,7 @@
 require_once "./Models/ProductsModel.php";
 require_once "./Views/ProductsView.php";
 require_once "./Models/ProductsModel.php";
+require_once "./Models/ImagesModel.php";
 
 
 class ProductsController {
@@ -10,6 +11,8 @@ class ProductsController {
     private $view;
     private $modelcate;
     private $viewcate;
+    private $modelimages;
+    private $viewimages;
 
 	function __construct(){
         
@@ -17,6 +20,7 @@ class ProductsController {
         $this->view = new ProductsView();
         $this->modelcate = new CategoryModel();
         $this->viewcate = new CategoryView();
+        $this->modelimages = new ImagesModel();
     }
     public function MostrarProductss(){
         $this->view->DisplayProducts();
@@ -47,8 +51,10 @@ class ProductsController {
     }
     public function DetailsProduct($id){
         $Product = $this->model->GetProductId($id);
-        $this->view->DisplayOnlyProductId($Product);
+        $Images = $this->modelimages->GetImages($id);
+        $this->view->DisplayOnlyProductId($Product,$Images);
     }
+
     public function GetProductsAdmin(){
         $this->checkLogIn();
         $Products = $this->model->GetProducts();
@@ -75,13 +81,19 @@ class ProductsController {
         $description= $_POST['description'];
         $price= $_POST['price'];
         $stock= $_POST['stock'];
-        $image= $_POST['image'];
         $id_category =$_POST['id_category'];
-        $this->model->InsertProduct($name,$description,$price,$stock,$image,$id_category);
-        $Products = $this->model->GetProducts();
-        $Category = $this->modelcate->GetCategoria();
-        $this->view->DisplayEditProductsId($Products,$Category);
+        if ($_FILES['image']['name'] == null){
+            header('Location: ' . URL_PRODUCTSADM . "/" . $id);
+        }else{
+            if ($_FILES['image']['name']) {
+                if ($_FILES['image']['type'] == "image/jpeg" || $_FILES['image']['type'] == "image/jpg" || $_FILES['image']['type'] == "image/png") {
+                    $this->model->InsertProduct($name,$description,$price,$stock,$_FILES['image'],$id_category);
+                }
+            }
+        }
+        header('Location: ' . URL_PRODUCTSADM . "/" . $id);        
     }
+
     public function BorrarOneProduct($id_product){
         $this->checkLogIn();
         $this->model->BorrarOneProduct($id_product);
@@ -97,13 +109,22 @@ class ProductsController {
         $this->view->VerFormEditProduct($product,$category);
     }
 
+ //   public function insertImages($id){
+  //      $this->checkLogIn(); 
+   //     if ($_FILES['img']['name'] == null){
+    //        header('Location: ' . URL_PRODUCT . "/" . $id);}
+     //       else {
+      //          if ($_FILES['img']['name']) {
+       //             if ($_FILES['img']['type'] == "image/jpeg" || $_FILES['img']['type'] == "image/jpg" || $_FILES['img']['type'] == "image/png") {
+        //                $this->modelimages->insertImages($id,$_FILES['img']); 
+         //           }
+          //      }
+           //     else {
+            //        $this->modelimages->insertImages($id,$_FILES['img']);  
+             //   }
+           // }
+           // header('Location: ' . URL_PRODUCT . "/" . $id);
+       // }
 
-    public function ProductCsr(){
-        $this->checkLogIn();
-        $this->view->DisplayProductCsr();
-
-
-    }
-
-}
+} 
 ?>
