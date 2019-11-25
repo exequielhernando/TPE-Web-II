@@ -24,11 +24,11 @@ class UserController {
             session_start();
             $_SESSION['user'] = $usuario->usuario;
             $_SESSION['userId'] = $usuario->id_usuario;
-            var_dump($_SESSION['userId']);
             if ($usuario->is_admin==1) {
                 header("Location: " . URL_PRODUCTSADM );
             }
-            else {
+            elseif($usuario->is_admin==0) {
+                
                 header("Location: " . URL_PRODUCTSLOG);
             }
         }else{
@@ -57,11 +57,10 @@ class UserController {
     }
     public function SaveEditUser(){
         $this->controller->checkLogIn();
-
         $id_user = $_POST["id_usuario"];
         $is_admin = $_POST["is_admin"];
         $this->model->SaveEditUser($is_admin, $id_user);
-        header("Location: " . BASE_URL . "/users");
+        header("Location: " . BASE_URL . "users");
     }
     public function login(){
         $this->view->DisplayLogin();

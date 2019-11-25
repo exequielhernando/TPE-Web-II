@@ -12,14 +12,12 @@ $action = $_GET["action"];
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 define("URL_PRODUCTS", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/products');
-define("URL_CATEGORY", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/Ca');
-
 define("BASE_FORMEDITPRODUCT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/formeditproduct');
 define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
 define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 define("URL_SIGNUP", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/signup');
 define("URL_PRODUCTSADM", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/productsadm');
-define("URL_PRODUCTLOG", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/productslog');
+define("URL_PRODUCTSLOG", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/productslog');
 
 define("URL_EDITCATEGORIA", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/editcategoria');
 
@@ -41,6 +39,8 @@ if($action == ''){
             $controller->VerFormEditProduct($partesURL[1]);
         }elseif($partesURL[0] == "productsbyorder") {
             $controller->GetProductsByOrder();
+        }elseif($partesURL[0] == "productsbyorderlog") {
+            $controller->GetProductsByOrderLog();
         }elseif($partesURL[0] == "UpdateProduct") {
             $controller->GetEditProducts();
         }elseif($partesURL[0] == "productsadm"){
@@ -51,10 +51,14 @@ if($action == ''){
             $controller->InsertProduct();
         }elseif($partesURL[0] == "product") {
             $controller->DetailsProduct($partesURL[1]);
+        }elseif($partesURL[0] == "productlog") {
+            $controller->DetailsProductLog($partesURL[1]);
         }elseif($partesURL[0] == "BorrarOneProduct") {
             $controller->BorrarOneProduct($partesURL[1]);
         }elseif($partesURL[0] == "category") {
             $controllercate->GetCategoria();
+        }elseif($partesURL[0] == "categorylog") {
+            $controllercate->GetCategoriaLog();
         }elseif($partesURL[0] == "editcategory") {
             $controllercate->GetEditCategoria();
         }elseif($partesURL[0] == "insertcategory") {

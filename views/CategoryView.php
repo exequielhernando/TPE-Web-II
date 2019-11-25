@@ -16,7 +16,13 @@ class CategoryView {
         $this->Smarty->assign('list_Category',$Category);
         $this->Smarty->display('templates/categoria.tpl');
     }
-
+    public function DisplayCategoriaLog($Category,$User){
+        $this->Smarty->assign('titulo',"Categorialog");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('list_Category',$Category);
+        $this->Smarty->assign('User',$User);
+        $this->Smarty->display('templates/categorialog.tpl');
+    }
     public function DisplayEditCategoriaId($Category,$User){
 
         $this->Smarty->assign('titulo',"EditCategoria");

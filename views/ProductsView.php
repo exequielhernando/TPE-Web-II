@@ -17,10 +17,12 @@ class ProductsView {
         $this->Smarty->display('templates/products.tpl');
 
     }
-    public function DisplayProductsCSR(){
-        $this->Smarty->assign('titulo',"Lista de Productos CSR");
+    public function ProductWithComments($Products,$User){
+        $this->Smarty->assign('titulo',"Products");
         $this->Smarty->assign('BASE_URL',BASE_URL);
-        $this->Smarty->display('templates/showproductscsr.tpl');
+        $this->Smarty->assign('list_Products',$Products);
+        $this->Smarty->assign('User',$User);
+        $this->Smarty->display('templates/showproductwithcomments.tpl');
     }
 
 
@@ -57,6 +59,15 @@ class ProductsView {
         $this->Smarty->assign('BASE_URL',BASE_URL);
         $this->Smarty->assign('product',$Product);
         $this->Smarty->display('templates/product.tpl');
+
+    }
+    public function DisplayOnlyProductIdLog($Product, $User){
+
+        $this->Smarty->assign('titulo',"product");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('product',$Product);
+        $this->Smarty->assign('User',$User);
+        $this->Smarty->display('templates/productlog.tpl');
 
     }
 }

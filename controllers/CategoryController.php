@@ -20,6 +20,7 @@ class CategoryController {
         $this->controlleruser = new UserController();
         $this->userModel = new UserModel;  
     }
+    //Todas las funciones del Visitante
     public function MostrarCategoria(){
         $this->view->DisplayCategoria();
     }
@@ -27,6 +28,15 @@ class CategoryController {
         $Category = $this->model->GetCategoria();
         $this->view->DisplayCategoriaId($Category);  
     }
+    //Todas las funciones del Usuario Logueado
+    public function GetCategoriaLog(){
+        $this->controller->checkLogIn();
+        $user_id = $_SESSION['userId'];
+        $User = $this->userModel->GetUser($user_id);
+        $Category = $this->model->GetCategoria();
+        $this->view->DisplayCategoriaLog($Category, $User);
+    }
+    //Todas las funciones del Usuario Administrador 
     public function GetEditCategoria(){
         $this->controller->checkLogIn();
         $user_id = $_SESSION['userId'];

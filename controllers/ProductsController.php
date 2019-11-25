@@ -24,6 +24,7 @@ class ProductsController {
     public function MostrarProductss(){
         $this->view->DisplayProducts();
     }
+    //Chequeo si esta logueado
     public function checkLogIn(){
         session_start();
         
@@ -38,6 +39,7 @@ class ProductsController {
         } 
         $_SESSION['LAST_ACTIVITY'] = time();
     }
+    //Todas las funciones del visitante
     public function GetProducts(){
         $Products = $this->model->GetProducts();
         $this->view->DisplayProductsId($Products);
@@ -46,12 +48,13 @@ class ProductsController {
     public function GetProductsByOrder(){
         $Products = $this->model->GetProductsByOrderCategory();
         $this->view->DisplayProductsId($Products);
-        
+
     }
     public function DetailsProduct($id){
         $Product = $this->model->GetProductId($id);
         $this->view->DisplayOnlyProductId($Product);
     }
+    //Todas las funciones del Usuario administrador
     public function GetProductsAdmin(){
         $this->checkLogIn();
         $user_id = $_SESSION['userId'];
@@ -60,13 +63,6 @@ class ProductsController {
         $Category = $this->modelcate->GetCategoria();
         $this->view->DisplayEditProductsId($Products,$Category,$User);
     }    
-    public function GetProductsLog(){
-        $this->checkLogIn();
-        $user_id = $_SESSION['userId'];
-        $User = $this->userModel->GetUser($user_id);
-
-        $this->view->ProductWithComments($User);
-    }
     public function GetEditProducts(){
         $this->checkLogIn();
         $id_product = $_POST["id_product"];
@@ -106,7 +102,29 @@ class ProductsController {
         $category = $this->modelcate->GetCategoria();
         $this->view->VerFormEditProduct($product,$category,$User);
     }
-    
+    //Todas las funciones del usuario logueado
+    public function GetProductsLog(){
+        $this->checkLogIn();
+        $Products = $this->model->GetProducts();
+        $user_id = $_SESSION['userId'];
+        $User = $this->userModel->GetUser($user_id);
+        $this->view->ProductWithComments($Products,$User);
+    }
+    public function GetProductsByOrderLog(){
+        $this->checkLogIn();
+        $Products = $this->model->GetProductsByOrderCategory();
+        $user_id = $_SESSION['userId'];
+        $User = $this->userModel->GetUser($user_id);
+        $this->view->ProductWithComments($Products,$User);
+
+    }
+    public function DetailsProductLog($id){
+        $this->checkLogIn();
+        $Product = $this->model->GetProductId($id);
+        $user_id = $_SESSION['userId'];
+        $User = $this->userModel->GetUser($user_id);
+        $this->view->DisplayOnlyProductIdLog($Product,$User);
+    }
 }
 
 ?>

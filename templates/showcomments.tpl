@@ -3,7 +3,7 @@
         {include file="vue/comments.tpl"}
         <div class="row">
             <div class="col-12" class="mx-auto">
-                <form class="form-group" action="insertar" method="post" class="comment" id="form-comments">
+                <form class="form-group" class="comment" id="form-comments">
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Put the score</label>
                     <p class="clasificacion">

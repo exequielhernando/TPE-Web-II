@@ -7,6 +7,7 @@ class SignUpController {
     private $model;
     private $view;
     private $view2;
+    private $userController;
 	function __construct(){
         $this->view = new SignUpView();
         $this->model = new UserModel();
@@ -24,7 +25,26 @@ class SignUpController {
 
         $hash = password_hash($pass, PASSWORD_DEFAULT);
         $this->model->InsertarUsuario($usuario,$hash,$email,$name,$lastname);
-        header("Location: " . BASE_URL);        
+        $this->iniciarSesion();
+    }
+    public function iniciarSesion(){
+        $pass = $_POST['pass'];
+        $usuario = $this->model->getPassword($_POST['usuario']);
+        if (isset($usuario) && password_verify($pass, $usuario->pass)){
+            var_dump(password_verify($pass, $usuario->pass));
+            session_start();
+            $_SESSION['user'] = $usuario->usuario;
+            $_SESSION['userId'] = $usuario->id_usuario;
+            if ($usuario->is_admin==1) {
+                header("Location: " . URL_PRODUCTSADM );
+            }
+            elseif($usuario->is_admin==0) {
+                
+                header("Location: " . URL_PRODUCTSLOG);
+            }
+        }else{
+            header("Location: " . URL_LOGIN);
+        }
     }
 }
 ?>
