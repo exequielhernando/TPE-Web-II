@@ -14,6 +14,8 @@
         </thead>
         <tbody class="contenedor-tabla" >
           {foreach from=$product item=products}
+            <input type="hidden" id="id_product" value="{$products->id_product}"/>
+
             <tr>
                   <td scope="col">{$products->name}</td>
                   <td scope="col">{$products->description}</th>
@@ -25,4 +27,5 @@
           {/foreach}
         </tbody>
     </table>
+    {include file="vue/comments.tpl"}
 {include file="footer.tpl"} 

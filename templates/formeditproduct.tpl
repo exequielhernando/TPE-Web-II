@@ -23,6 +23,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Edit Product</button>
       </form>
+      {include file="showcomments.tpl"} 
       </div>
     </div>
     </div>

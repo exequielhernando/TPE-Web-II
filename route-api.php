@@ -16,10 +16,12 @@ $router = new Router();
 // arma la tabla de ruteo
 
 $router->addRoute("comments", "GET", "CommentsApiController", "GetComments");
-$router->addRoute("comments/:ID", "GET", "CommentsApiController", "GetComment");
-$router->addRoute("comments/:ID", "DELETE", "CommentsApiController", "DeleteComment");
-$router->addRoute("comments", "POST", "CommentsApiController", "AddComment");
-$router->addRoute("comments/:ID", "PUT", "CommentsApiController", "UpdateComment");
+$router->addRoute("comments/:ID", "GET", "CommentsApiController", "GetCommentsProduct");
+
+$router->addRoute("comment/:ID", "GET", "CommentsApiController", "GetComment");
+$router->addRoute("comment/:ID", "DELETE", "CommentsApiController", "DeleteComment");
+$router->addRoute("comments/:ID", "POST", "CommentsApiController", "AddComment");
+$router->addRoute("comment/:ID", "PUT", "CommentsApiController", "UpdateComment");
 
 
 

@@ -9,7 +9,11 @@ class CommentsApiController extends ApiController{
         $comments = $this->commentsModel->GetComments();
         $this->view->response($comments, 200);
     }
-
+    public function GetCommentsProduct($params = null){
+        $id_product = $params[':ID'];
+        $comments = $this->commentsModel->GetCommentsProduct($id_product);
+        $this->view->response($comments, 200);
+    }
     /**
      * Obtiene una tarea dado un ID
      * 
@@ -18,7 +22,6 @@ class CommentsApiController extends ApiController{
     public function GetComment($params = null) {
         // obtiene el parametro de la ruta
         $id = $params[':ID'];
-        
         $comment = $this->commentsModel->GetComment($id);
         
         if ($comment) {
@@ -41,14 +44,12 @@ class CommentsApiController extends ApiController{
     }
 
     // TareaApiController.php
-   public function AddComment($params = []) {     
+   public function AddComment($params = null) { 
         $comment = $this->getData(); // la obtengo del body
-
-        // inserta el producto
-        $id_comment = $this->commentsModel->InsertComment($comment->comment, $comment->score,$comment->date,$comment->id_product);
-
+        $commentId = $this->commentsModel->InsertComment($comment->comment, $comment->score,$comment->date,$comment->id_product,0);
+            
         // obtengo la recien creada
-        $new_comment = $this->commentsModel->GetComment($id_comment);
+        $new_comment = $this->commentsModel->GetComment($commentId);
         
         if ($new_comment)
             $this->view->response($new_comment, 200);

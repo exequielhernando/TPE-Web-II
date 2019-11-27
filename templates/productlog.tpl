@@ -14,7 +14,9 @@
         </thead>
         <tbody class="contenedor-tabla" >
           {foreach from=$product item=products}
-            <tr>
+            <input type="hidden" id="id_product" value="{$products->id_product}"/>
+
+            <tr>  
                   <td scope="col">{$products->name}</td>
                   <td scope="col">{$products->description}</th>
                   <td scope="col">{$products->price}</th>

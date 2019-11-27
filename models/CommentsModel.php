@@ -7,8 +7,15 @@ class CommentsModel {
 	public function GetComments(){
         $sentencia = $this->db->prepare( "SELECT C.*, P.name as nameProd from comentario C join producto P on C.id_product = P.id_product");
         $sentencia->execute();
-        $Products = $sentencia->fetchAll(PDO::FETCH_OBJ);
-        return $Products;
+        $Comments = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+        return $Comments;
+    }	
+    public function GetCommentsProduct($id_product){
+        $sentencia = $this->db->prepare( "SELECT * FROM comentario WHERE id_product = ?");
+        $sentencia->execute(array($id_product));
+        $Comments = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $Comments;
     }		
     public function GetComment($id){
         $sentencia = $this->db->prepare( "SELECT C.*, P.name as nameProd from comentario C join producto P on C.id_product = P.id_product WHERE id_comment=?");
@@ -31,14 +38,6 @@ class CommentsModel {
         $sentencia->execute(array($comment,$score,$date,$id_product,$id_comment));
     }
    
-    
-    // public function GetProductsByOrderCategory(){
-    //     $sentencia = $this->db->prepare( "SELECT P.*, C.name as nameCat from producto P join categoria C on P.id_category = C.id_category ORDER BY P.id_category ASC");
-    //     $sentencia->execute();
-    //     $Products = $sentencia->fetchAll(PDO::FETCH_OBJ);
-    //     return $Products;
-    // }	
-
 
 }
 ?>

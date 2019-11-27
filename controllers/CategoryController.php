@@ -56,13 +56,18 @@ class CategoryController {
         $description= $_POST['description'];
         $this->model->SaveEditCategory($name,$description,$id_category);
         $Category = $this->model->GetCategoria();
-        $this->view->DisplayEditCategoriaId($Category);
+        $user_id = $_SESSION['userId'];
+        $User = $this->userModel->GetUser($user_id);
+        $this->view->DisplayEditCategoriaId($Category, $User);  
     }
     public function BorrarOneCategory($id_category){
         $this->controller->checkLogIn();
         $this->model->BorrarOneCategory($id_category);
         $Category = $this->model->GetCategoria();
-        $this->view->DisplayEditCategoriaId($Category);
+        $user_id = $_SESSION['userId'];
+        $User = $this->userModel->GetUser($user_id);
+        $this->view->DisplayEditCategoriaId($Category, $User);  
+
     }
     public function InsertCategory(){
         $this->controller->checkLogIn(); 
@@ -70,7 +75,10 @@ class CategoryController {
         $description= $_POST['description']; 
         $this->model->InsertCategory($name,$description);
         $Category = $this->model->GetCategoria();
-        $this->view->DisplayEditCategoriaId($Category);
+        $user_id = $_SESSION['userId'];
+        $User = $this->userModel->GetUser($user_id);
+        $this->view->DisplayEditCategoriaId($Category, $User);  
+
     }
 }
 ?>

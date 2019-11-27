@@ -1,28 +1,38 @@
 "use strict"
 
-// event listeners
-document.querySelector("#form-comments").addEventListener('submit', addComment);
-
 // define la app Vue
 let app = new Vue({
     el: "#template-vue-comments",
     data: {
-        subtitle: "Estas tareas se renderizan desde el cliente usando Vue.js",
+        subtitle: "Comments",
+        loading: false,
         comments: [],
-        auth: true
     }
 });
 
+window.onload = function(){
+    GetCommentsProduct();
+
+}
+
+document.getElementById('btn-refresh').addEventListener("click", GetCommentsProduct);
+
+let btnAddComment = document.getElementById("addComment");
+btnAddComment.addEventListener("click", addComment);
 /**
  * Obtiene la lista de tareas de la API y las renderiza con Vue.
  */
-function getComments() {
-    fetch("api/comments")
+function GetCommentsProduct() {
+    app.loading = true;
+    let id_product = document.getElementById("id_product").value;
+    
+    fetch(`api/comments/${id_product}`)
     .then(response => response.json())
     .then(comments => {
-        console.log(comments);
-        
+            
         app.comments = comments; // similar a $this->smarty->assign("tasks", $tasks)
+        app.loading = false;
+
     })
     .catch(error => console.log(error));
 }
@@ -32,26 +42,45 @@ function getComments() {
  */
 function addComment(event) {
     event.preventDefault();
-    
+    let actualComment = document.querySelector("#textComment").value;
+    let actualDate = new Date();
+    let selecScore=0;
+    let id_product = document.getElementById("id_product").value;
+        let selecStar = document.getElementsByName("estrellas");
+        // Recorremos todos los valores del radio button para encontrar el
+        // seleccionado
+        for(var i=0;i<selecStar.length;i++)
+        {
+            if(selecStar[i].checked)
+            selecScore=selecStar[i].value;
+        }
     let data = {
-        comment:  document.querySelector("input[name=comment]").value,        
-        score:  document.querySelector("input[name=score]").value,
-        date:  document.querySelector("input[name=date]").value,
-        // id_category: document.querySelector("input[name=id_category]").value
+        comment: actualComment,        
+        score: selecScore,
+        date:  actualDate,
+        id_product :id_product
     }
     console.log(data);
 
 
-    fetch('api/comments', {
+    fetch(`api/comments/${id_product}`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},       
         body: JSON.stringify(data) 
      })
      .then(response => {
-        getComments();
+        console.log(response);
+
+        GetCommentsProduct();
+        document.getElementById("form_comment").reset();
      })
      .catch(error => console.log(error));
 }
+function deleteComments(event) {
+    event.preventDefault();
+    
 
-// obtiene las tareas al iniciio
-getComments();
+}
+
+// obtiene las tareas al inicio
+GetCommentsProduct();
