@@ -11,7 +11,6 @@
                   <th scope="col">Category</th>
                   <th scope="col"> </th>
                   <th scope="col"> </th>
-                  <th scope="col">Details</th>
 
             </tr>
           </thead>
@@ -25,7 +24,6 @@
                   <td scope="col">{$products->nameCat}</td>
                   <td scope="col"> <a href="BorrarOneProduct/{$products->id_product}">BORRAR</td>
                   <td scope="col"> <a href="FormEditProduct/{$products->id_product}">EDITAR</td>
-                  <td scope="col"> <a href="product/{$products->id_product}">SEE</th>
 
 
             </tr>
@@ -49,8 +47,8 @@
           <label for="stock">Stock:</label>
           <input type="number" class="form-control" id="stock" name="stock" aria-describedby="stock" placeholder="stock">
 
-          <label for="image">Image:</label>
-          <input type="file" name="image" id="imageToUpload">
+        {**  <label for="image">Image:</label>**}
+         {** <input type="file" name="image" id="imageToUpload">**}
 
           <div class="select">
           <label for="categoria">Categoria:</label>
@@ -65,7 +63,7 @@
       </div>
     </div>
     </div>
-<div class="col-4"
+<div class="col-4">
   </div>
 </div>
 {include file="footer.tpl"}

@@ -38,12 +38,14 @@ class ProductsView {
         $smarty->display('templates/formeditproduct.tpl');
 
     }
-    public function VerFormEditProduct($product,$category){
+    public function VerFormEditProduct($product,$category,$images){
         $smarty = new Smarty();
-        $smarty->assign('titulo',"FormEditProducts");
+        $smarty->assign('titulo',"FormEditProduct");
         $smarty->assign('BASE_URL',BASE_URL);
         $smarty->assign('product',$product);
         $smarty->assign('category',$category);
+        $smarty->assign('Images', $images);
+
         $smarty->display('templates/formeditproduct.tpl');
 
     }
@@ -57,7 +59,7 @@ class ProductsView {
 
     }
     public function DisplayOnlyProductId($Product,$Images){
-       // $this->smarty->assign('Context', explode("/", $_GET["action"]));
+        // $Images pasar por parametro
         $smarty = new Smarty();
         $smarty->assign('titulo',"product");
         $smarty->assign('BASE_URL',BASE_URL);

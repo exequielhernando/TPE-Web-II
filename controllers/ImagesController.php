@@ -16,7 +16,7 @@ class ImagesController{
     function addImages($id){
         $this->controllerproduct->checkLogIn();
         if ($_FILES['image']['name'] == null){
-            header('Location: ' . URL_PRODUCT . "/" . $id);
+            header('Location: ' . BASE_FORMEDITPRODUCT . "/" . $id);
         }else{
             if ($_FILES['image']['name']) {
                 if ($_FILES['image']['type'] == "image/jpeg" || $_FILES['image']['type'] == "image/jpg" || $_FILES['image']['type'] == "image/png") {
@@ -24,9 +24,17 @@ class ImagesController{
                 }
             }
         }
-        header('Location: ' . URL_PRODUCT . "/" . $id);
+        header('Location: ' . BASE_FORMEDITPRODUCT . "/" . $id);
     }
 
+    public function deleteImage($id_image){
+        $this->model->deleteImage($id_image);
+       // $id_product=$_POST['id_product'];
+        
+        header('Location: ' . URL_PRODUCTSADM);
+
+        
+    }
 
 }
 

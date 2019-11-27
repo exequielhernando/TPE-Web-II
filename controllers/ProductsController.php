@@ -68,7 +68,7 @@ class ProductsController {
         $description= $_POST["description"];
         $price= $_POST["price"];
         $stock= $_POST["stock"];
-        $image= $_POST["image"];
+        $image= null;
         $id_category =$_POST['id_category'];
         $this->model->SaveEditProduct($name,$description,$price,$stock,$image,$id_category,$id_product);
         $Products = $this->model->GetProducts();
@@ -82,15 +82,18 @@ class ProductsController {
         $price= $_POST['price'];
         $stock= $_POST['stock'];
         $id_category =$_POST['id_category'];
-        if ($_FILES['image']['name'] == null){
-            header('Location: ' . URL_PRODUCTSADM . "/" . $id);
-        }else{
-            if ($_FILES['image']['name']) {
-                if ($_FILES['image']['type'] == "image/jpeg" || $_FILES['image']['type'] == "image/jpg" || $_FILES['image']['type'] == "image/png") {
-                    $this->model->InsertProduct($name,$description,$price,$stock,$_FILES['image'],$id_category);
-                }
-            }
-        }
+        $image=null;
+        //if ($_FILES['image']['name'] == null){
+        //    header('Location: ' . URL_PRODUCTSADM . "/" . $id);
+        //}else{
+            //if ($_FILES['image']['name']) {
+             //   if ($_FILES['image']['type'] == "image/jpeg" || $_FILES['image']['type'] == "image/jpg" || $_FILES['image']['type'] == "image/png") {
+                  //  $this->model->InsertProduct($name,$description,$price,$stock,$_FILES['image'],$id_category);
+              $this->model->InsertProduct($name,$description,$price,$stock,$image,$id_category);
+                //por parametro al model $_FILES['image']
+            //    }
+            //}
+        //}
         header('Location: ' . URL_PRODUCTSADM . "/" . $id);        
     }
 
@@ -106,8 +109,11 @@ class ProductsController {
         $this->checkLogIn();
         $product = $this->model->GetProductId($id_product);
         $category = $this->modelcate->GetCategoria();
-        $this->view->VerFormEditProduct($product,$category);
+        $images = $this->modelimages->GetImages($id_product);
+
+        $this->view->VerFormEditProduct($product,$category,$images);
     }
+
 
  //   public function insertImages($id){
   //      $this->checkLogIn(); 

@@ -19,7 +19,10 @@ class ImagesModel {
             $sentencia->execute(array($id,$pathImg));
         }
     }
-        
+    public function deleteImage($id_product){
+        $sentencia = $this->db->prepare("DELETE FROM images WHERE id_image=?");
+        $sentencia->execute(array($id_product));
+    }
     
 
     public function GetImages($id){

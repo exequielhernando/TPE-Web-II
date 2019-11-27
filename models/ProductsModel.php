@@ -20,12 +20,14 @@ class ProductsModel {
 
 
 
-    public function InsertProduct($name,$description,$price,$stock,$image = null,$id_category){
-        $pathImg = null;
-        $pathImg = $this->uploadImage($image);
-      
+    public function InsertProduct($name,$description,$price,$stock,$image,$id_category){
+    //$image = null por parametro
+        //    $pathImg = null;
+    //    $pathImg = $this->uploadImage($image);
+ //   $sentencia = $this->db->prepare("INSERT INTO producto(name,description,price,stock,image,id_category) VALUES(?,?,?,?,?,?)");
+
         $sentencia = $this->db->prepare("INSERT INTO producto(name,description,price,stock,image,id_category) VALUES(?,?,?,?,?,?)");
-        $sentencia->execute(array($name,$description,$price,$stock,$pathImg,$id_category));
+        $sentencia->execute(array($name,$description,$price,$stock,$image,$id_category));
         
     }
 
