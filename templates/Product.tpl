@@ -7,7 +7,6 @@
                   <th scope="col">Description</th>
                   <th scope="col">Price</th>
                   <th scope="col">Stock</th>
-                  <th scope="col">Image</th>
                   <th scope="col">Category</th>
 
           </tr> 
@@ -21,11 +20,11 @@
                   <td scope="col">{$products->description}</th>
                   <td scope="col">{$products->price}</th>
                   <td scope="col">{$products->stock}</th>
-                  <td scope="col">{$products->image}</th>
                   <td scope="col">{$products->nameCat}</th>
             </tr>
           {/foreach}
         </tbody>
     </table>
+    {include file="images.tpl"} 
     {include file="vue/comments.tpl"}
 {include file="footer.tpl"} 

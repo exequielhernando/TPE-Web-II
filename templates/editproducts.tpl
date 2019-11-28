@@ -9,7 +9,6 @@
                   <th scope="col">Description</th>
                   <th scope="col">Price</th>
                   <th scope="col">Stock</th>
-                  <th scope="col">Image</th>
                   <th scope="col">Category</th>
                   <th scope="col"> </th>
                   <th scope="col"> </th>
@@ -22,7 +21,6 @@
                   <td scope="col">{$products->description}</td>
                   <td scope="col">{$products->price}</td>
                   <td scope="col">{$products->stock}</td>
-                  <td scope="col">{$products->image}</td>
                   <td scope="col">{$products->nameCat}</td>
                   <td scope="col"> <a href="BorrarOneProduct/{$products->id_product}">BORRAR</td>
                   <td scope="col"> <a href="FormEditProduct/{$products->id_product}">EDITAR</td>
@@ -47,8 +45,6 @@
           <input type="number" class="form-control" id="price" name="price" aria-describedby="price" placeholder="price">
           <label for="stock">Stock:</label>
           <input type="number" class="form-control" id="stock" name="stock" aria-describedby="stock" placeholder="stock">
-          <label for="image">Image:</label>
-          <input type="input" class="form-control-center" id="image" name="image" aria-describedby="image" placeholder="image">
           <div class="select">
           <label for="categoria">Categoria:</label>
            <select id="id_category" name ="id_category" class="browser-default custom-select">

@@ -5,6 +5,7 @@ require_once "controllers/UserController.php";
 require_once "controllers/SignUpController.php";
 require_once "controllers/ProductsController.php";
 require_once "controllers/CategoryController.php";
+require_once "controllers/ImagesController.php";
 
 
 
@@ -25,6 +26,7 @@ $controller = new ProductsController();
 $controllercate = new CategoryController();
 $controllerUser = new UserController();
 $controllerSignUp = new SignUpController();
+$controllerImages = new ImagesController();
 
 
 if($action == ''){
@@ -89,8 +91,10 @@ if($action == ''){
             $controllerSignUp->SignUp();
         }elseif($partesURL[0] == "registrarse") {
             $controllerSignUp->registrarse();
-        }elseif($partesURL[0] == "resetPassword") {
-            $controllerSignUp->ResetPassword();
+        }elseif($partesURL[0] == "addImages") {
+            $controllerImages->addImages($partesURL[1]);
+        }elseif($partesURL[0] == "deleteImage") {
+            $controllerImages->deleteImage($partesURL[1]);
         }
     }
 }

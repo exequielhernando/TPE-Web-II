@@ -2,6 +2,7 @@
 require_once "./Models/ProductsModel.php";
 require_once "./Views/ProductsView.php";
 require_once "./Models/ProductsModel.php";
+require_once "./Models/ImagesModel.php";
 
 
 class ProductsController {
@@ -12,6 +13,8 @@ class ProductsController {
     private $viewcate;
     private $userView;
     private $userModel;
+    private $modelimages;
+    private $viewimages;
 	function __construct(){
         
         $this->model = new ProductsModel();
@@ -20,6 +23,8 @@ class ProductsController {
         $this->viewcate = new CategoryView();
         $this->userModel = new UserModel();
         $this->userView = new UserView();
+        $this->modelimages = new ImagesModel();
+
     }
     public function MostrarProductss(){
         $this->view->DisplayProducts();
@@ -52,7 +57,8 @@ class ProductsController {
     }
     public function DetailsProduct($id){
         $Product = $this->model->GetProductId($id);
-        $this->view->DisplayOnlyProductId($Product);
+        $Images = $this->modelimages->GetImages($id);
+        $this->view->DisplayOnlyProductId($Product,$Images);
     }
     //Todas las funciones del Usuario administrador
     public function GetProductsAdmin(){
@@ -70,7 +76,7 @@ class ProductsController {
         $description= $_POST["description"];
         $price= $_POST["price"];
         $stock= $_POST["stock"];
-        $image= $_POST["image"];
+        $image= null;
         $id_category =$_POST['id_category'];
         $this->model->SaveEditProduct($name,$description,$price,$stock,$image,$id_category,$id_product);
         header("Location: " . URL_PRODUCTSADM);
@@ -82,7 +88,7 @@ class ProductsController {
         $description= $_POST['description'];
         $price= $_POST['price'];
         $stock= $_POST['stock'];
-        $image= $_POST['image'];
+        $image= null;
         $id_category =$_POST['id_category'];
         $this->model->InsertProduct($name,$description,$price,$stock,$image,$id_category);
         header("Location: " . URL_PRODUCTSADM);  
@@ -100,7 +106,8 @@ class ProductsController {
         $User = $this->userModel->GetUser($user_id);
         $product = $this->model->GetProductId($id_product);
         $category = $this->modelcate->GetCategoria();
-        $this->view->VerFormEditProduct($product,$category,$User);
+        $images = $this->modelimages->GetImages($id_product);
+        $this->view->VerFormEditProduct($product,$category,$User,$images);
     }
     //Todas las funciones del usuario logueado
     public function GetProductsLog(){
@@ -123,7 +130,8 @@ class ProductsController {
         $Product = $this->model->GetProductId($id);
         $user_id = $_SESSION['userId'];
         $User = $this->userModel->GetUser($user_id);
-        $this->view->DisplayOnlyProductIdLog($Product,$User);
+        $images = $this->modelimages->GetImages($id);
+        $this->view->DisplayOnlyProductIdLog($Product,$User,$images);
     }
 }
 

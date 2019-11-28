@@ -35,7 +35,11 @@ class ProductsModel {
         $Products = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $Products;
     }	
-
+    private function uploadImage($image){
+        $target = "imgProduct/" . uniqid() . "." . strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));  
+        move_uploaded_file($image['tmp_name'], $target);
+        return $target;
+    }
 
 }
 ?>

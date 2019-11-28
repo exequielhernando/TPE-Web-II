@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2019 a las 18:51:08
+-- Tiempo de generación: 28-11-2019 a las 22:13:46
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -42,7 +42,63 @@ INSERT INTO `categoria` (`id_category`, `name`, `description`) VALUES
 (133, 'Masculino', 'Uso para hombres'),
 (134, 'Femenino', 'Uso para mujeres'),
 (135, 'Unisex', 'Uso para hombres/mujeres'),
-(145, 'Chau', 'Hola');
+(145, 'Chau', 'Hola'),
+(151, 'asdasd', 'asdsa'),
+(152, 'asdasd', 'asdsa'),
+(153, 'qqq', 'qqq');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id_comment` int(11) NOT NULL,
+  `comment` varchar(200) NOT NULL,
+  `score` int(5) NOT NULL,
+  `date` date NOT NULL,
+  `id_product` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`id_comment`, `comment`, `score`, `date`, `id_product`) VALUES
+(15, 'asd', 4, '2019-11-26', 12),
+(16, 'asdasd', 4, '2019-11-26', 12),
+(17, 'asdasd', 4, '2019-11-26', 12),
+(34, 'Joyaaaa', 5, '2019-11-27', 17),
+(35, 'qqqqq', 4, '2019-11-27', 17),
+(36, 'as', 2, '2019-11-27', 17),
+(37, 'as', 3, '2019-11-27', 17),
+(38, 'asd', 3, '2019-11-27', 17),
+(43, 'asd', 3, '2019-11-27', 44),
+(44, 'asdasd', 5, '2019-11-28', 12),
+(46, 'Que piolaaa\n', 5, '2019-11-28', 12);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `images`
+--
+
+CREATE TABLE `images` (
+  `id_image` int(11) NOT NULL,
+  `direccion` varchar(200) NOT NULL,
+  `id_product` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `images`
+--
+
+INSERT INTO `images` (`id_image`, `direccion`, `id_product`) VALUES
+(2, 'imgProduct/5de02fc919528.jpg', 44),
+(4, 'imgProduct/5de031789976b.jpg', 12),
+(5, 'imgProduct/5de031a9ae5cb.jpg', 12),
+(9, 'imgProduct/5de0359b0ddd5.jpg', 12);
 
 -- --------------------------------------------------------
 
@@ -70,8 +126,7 @@ INSERT INTO `producto` (`id_product`, `name`, `description`, `price`, `stock`, `
 (14, 'Brasier', 'Azul Talle S', 150, 200, '', 134),
 (17, 'Boxer', 'Talle Medium', 200, 150, '', 133),
 (44, 'Emiliano', 'kpo', 1, 1, '', 133),
-(46, 'sofia', 'kpa', 1000000, 1, '', 134),
-(48, 'asd', 'asd', 1, 1, '', 145);
+(46, 'sofia', 'kpa', 1000000, 1, '', 134);
 
 -- --------------------------------------------------------
 
@@ -96,7 +151,8 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id_usuario`, `usuario`, `pass`, `email`, `name`, `lastname`, `is_admin`) VALUES
 (2, 'guille', '$2y$10$KOoVzgcoI25LbsruQOWHW.wPe6KmzYwqQFqLrez7Dai9cBde0Jfo.', 'guille@gmail.com', 'asd', 'asd', 1),
 (4, 'Exe', '$2y$10$fkxu/.VwJtl523dZpDjsruCWZECrr7iXomB.CTau9j2pa8zb4XXyq', 'exe@exe.com', 'exe', 'exe', 1),
-(6, '40020001', '$2y$10$XbqY2JqoBTVuarX/sd4qXe/5TAq9jhsb/YAdfPoLbTC.kjzHxA5XG', 'sofiaormazabal1@gmail.com', 'sofia', '', 0);
+(6, '40020001', '$2y$10$XbqY2JqoBTVuarX/sd4qXe/5TAq9jhsb/YAdfPoLbTC.kjzHxA5XG', 'sofiaormazabal1@gmail.com', 'sofia', '', 1),
+(22, 'asd', '$2y$10$c8sCEjdACb.hIc2Cb0zkxeAaKA6G/Cq41ewgXtEFt3a4SZ1DrWUne', 'asd@asd.com', 'asd', 'asd', 0);
 
 --
 -- Índices para tablas volcadas
@@ -107,6 +163,20 @@ INSERT INTO `usuario` (`id_usuario`, `usuario`, `pass`, `email`, `name`, `lastna
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_category`);
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_comment`),
+  ADD KEY `id_producto` (`id_product`);
+
+--
+-- Indices de la tabla `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id_image`),
+  ADD KEY `id_product` (`id_product`);
 
 --
 -- Indices de la tabla `producto`
@@ -130,23 +200,47 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+
+--
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT de la tabla `images`
+--
+ALTER TABLE `images`
+  MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `producto` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `images`
+--
+ALTER TABLE `images`
+  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `producto` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `producto`

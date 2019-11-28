@@ -44,29 +44,39 @@ class ProductsView {
         $this->Smarty->display('templates/formeditproduct.tpl');
 
     }
-    public function VerFormEditProduct($product,$category,$User){
+    public function VerFormEditProduct($product,$category,$User,$images){
         $this->Smarty->assign('titulo',"FormEditProducts");
         $this->Smarty->assign('BASE_URL',BASE_URL);
         $this->Smarty->assign('product',$product);
         $this->Smarty->assign('category',$category);
         $this->Smarty->assign('User',$User);
+        $this->Smarty->assign('Images', $images);
         $this->Smarty->display('templates/formeditproduct.tpl');
 
     }
-    public function DisplayOnlyProductId($Product){
+    public function MostrarImages($Product,$Images){
+        $this->Smarty->assign('titulo',"MostrarImagesDeProduct");
+        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('product',$product);
+        $this->Smarty->assign('Images', $images);
+        $this->Smarty->display('templates/Product.tpl');
+    }
+    public function DisplayOnlyProductId($Product,$Images){
 
         $this->Smarty->assign('titulo',"product");
         $this->Smarty->assign('BASE_URL',BASE_URL);
         $this->Smarty->assign('product',$Product);
+        $this->Smarty->assign('Images', $Images);
         $this->Smarty->display('templates/product.tpl');
 
     }
-    public function DisplayOnlyProductIdLog($Product, $User){
+    public function DisplayOnlyProductIdLog($Product, $User,$Images){
 
         $this->Smarty->assign('titulo',"product");
         $this->Smarty->assign('BASE_URL',BASE_URL);
         $this->Smarty->assign('product',$Product);
         $this->Smarty->assign('User',$User);
+        $this->Smarty->assign('Images', $Images);
         $this->Smarty->display('templates/productlog.tpl');
 
     }

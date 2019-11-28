@@ -27,5 +27,6 @@
           {/foreach}
         </tbody>
     </table>
+    {include file="images.tpl"} 
     {include file="showcomments.tpl"}
 {include file="footer.tpl"} 

@@ -111,3 +111,7 @@ body{
   input[type="radio"]:checked ~ label {
     color: orange;
   }
+  .imgchica{
+    height: 40px;
+    width: 40px;
+}

@@ -13,7 +13,6 @@
             </div>
             <button type="submit" class="btn btn-primary btn-block colorbotonsubmit formpost" value="Login">Login</button>
         </form>
-        <a href="reset-password.php">Forgot my password?</a>
         </div>
         <div class="col-4"> 
         </div>
