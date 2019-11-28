@@ -76,9 +76,8 @@ class ProductsController {
         $description= $_POST["description"];
         $price= $_POST["price"];
         $stock= $_POST["stock"];
-        $image= null;
         $id_category =$_POST['id_category'];
-        $this->model->SaveEditProduct($name,$description,$price,$stock,$image,$id_category,$id_product);
+        $this->model->SaveEditProduct($name,$description,$price,$stock,$id_category,$id_product);
         header("Location: " . URL_PRODUCTSADM);
 
     }
@@ -88,9 +87,8 @@ class ProductsController {
         $description= $_POST['description'];
         $price= $_POST['price'];
         $stock= $_POST['stock'];
-        $image= null;
         $id_category =$_POST['id_category'];
-        $this->model->InsertProduct($name,$description,$price,$stock,$image,$id_category);
+        $this->model->InsertProduct($name,$description,$price,$stock,$id_category);
         header("Location: " . URL_PRODUCTSADM);  
     }
     public function BorrarOneProduct($id_product){

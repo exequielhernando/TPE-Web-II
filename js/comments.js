@@ -45,6 +45,7 @@ function GetCommentsProduct() {
     let countComment = 0;
     let commentsScore = 0;
     let id_product = document.getElementById("id_product").value;
+    
     let User;
     if (document.getElementById("User")) {
         User = document.getElementById("User").value;

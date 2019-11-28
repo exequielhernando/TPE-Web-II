@@ -15,6 +15,7 @@
             </tr>
           </thead>
         <tbody class="contenedor-tabla" >
+          <input type="hidden" class="form-control" id="id_product" name="id_product" value="{$list_Products[0]->id_product}">
           {foreach from=$list_Products item=products}
             <tr>
                   <td scope="col">{$products->name}</td>

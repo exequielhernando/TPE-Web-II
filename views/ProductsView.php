@@ -44,17 +44,17 @@ class ProductsView {
         $this->Smarty->display('templates/formeditproduct.tpl');
 
     }
-    public function VerFormEditProduct($product,$category,$User,$images){
+    public function VerFormEditProduct($Product,$category,$User,$images){
         $this->Smarty->assign('titulo',"FormEditProducts");
         $this->Smarty->assign('BASE_URL',BASE_URL);
-        $this->Smarty->assign('product',$product);
+        $this->Smarty->assign('product',$Product);
         $this->Smarty->assign('category',$category);
         $this->Smarty->assign('User',$User);
         $this->Smarty->assign('Images', $images);
         $this->Smarty->display('templates/formeditproduct.tpl');
 
     }
-    public function MostrarImages($Product,$Images){
+    public function MostrarImages($product,$Images){
         $this->Smarty->assign('titulo',"MostrarImagesDeProduct");
         $this->Smarty->assign('BASE_URL',BASE_URL);
         $this->Smarty->assign('product',$product);
