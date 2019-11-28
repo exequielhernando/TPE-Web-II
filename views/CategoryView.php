@@ -39,11 +39,12 @@ class CategoryView {
         $this->Smarty->display('templates/formeditcategory.tpl');
 
     }
-    public function VerFormEditCategory($category){
+    public function VerFormEditCategory($category,$User){
 
         $this->Smarty->assign('titulo',"FormEditCategory");
         $this->Smarty->assign('BASE_URL',BASE_URL);
         $this->Smarty->assign('category',$category);
+        $this->Smarty->assign('User',$User);
         $this->Smarty->display('templates/formeditcategory.tpl');
 
     }

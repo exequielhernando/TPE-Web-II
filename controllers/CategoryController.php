@@ -47,7 +47,9 @@ class CategoryController {
     public function GetEditCategoriaId($id_category){
         $this->controller->checkLogIn();
         $Category = $this->model->GetCategoriaId($id_category);
-        $this->view->VerFormEditCategory($Category);
+        $user_id = $_SESSION['userId'];
+        $User = $this->userModel->GetUser($user_id);
+        $this->view->VerFormEditCategory($Category,$User);
     }
     public function SaveEditCategory(){
         $this->controller->checkLogIn();

@@ -1,9 +1,8 @@
 <div class="row">
     <div class="col-12">
         {include file="vue/comments.tpl"}
-        
+        <input type="hidden" id="User" value="{$User[0]->is_admin}"/>
         {if {$User[0]->is_admin == 0}}
-                           
             <div class="row">
                 <div class="col-12" class="mx-auto">
                     <form class="form-group" class="comment" id="form_comment">
